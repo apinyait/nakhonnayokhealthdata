@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-V1Ro74QsI7bFODcR6ree7VbekOjp9rOKXAjvyHmV7a8=' 'sha256-8tncMqs7emBFmhIOF/lcSIwMgG+Q9q0dDj0QffbOneY='; style-src 'sha256-XnApTf8CIg0zmVn1R6h7UJUElt/uzgJn+osX00zsk7w='; img-src 'self' data:; font-src https://cdn.jsdelivr.net data:; connect-src 'self' https://opendata.moph.go.th; frame-src https://apinyait.github.io; base-uri 'none'; form-action 'none'; object-src 'none'; manifest-src 'self'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>NAKHON NAYOK HEALTH DATA · NYK Health Analytics</title>
+<meta name="theme-color" content="#1d4ed8">
+<link rel="icon" href="data:image/webp;base64,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">
+<script>
+// ตั้งธีมก่อนวาดหน้า ป้องกันหน้ากะพริบ
+(function(){var t;try{t=localStorage.getItem('nyk-theme')}catch(e){}
+if(t!=='dark'&&t!=='light')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+document.documentElement.dataset.theme=t;
+// กันการนำหน้านี้ไปฝังในเว็บอื่น (clickjacking): ถ้าถูกฝังจากต่างโดเมนให้ซ่อนหน้า
+if(window.self!==window.top){var ok=false;try{ok=window.top.location.origin===location.origin}catch(e){}
+if(!ok){document.documentElement.style.visibility='hidden';}}})();
+</script>
+<style>
+@font-face{font-family:"PSK";font-weight:400;font-display:swap;
+  src:local("TH SarabunPSK"),local("TH Sarabun PSK"),local("THSarabunPSK"),local("TH Sarabun New"),local("THSarabunNew"),
+      url("https://cdn.jsdelivr.net/npm/font-th-sarabun-new@1.0.0/fonts/THSarabunNew-webfont.woff") format("woff")}
+@font-face{font-family:"PSK";font-weight:700;font-display:swap;
+  src:local("TH SarabunPSK Bold"),local("TH Sarabun PSK Bold"),local("THSarabunPSK-Bold"),local("TH Sarabun New Bold"),local("THSarabunNew-Bold"),
+      url("https://cdn.jsdelivr.net/npm/font-th-sarabun-new@1.0.0/fonts/THSarabunNew_bold-webfont.woff") format("woff")}
+@view-transition{navigation:auto}
+
+:root{
+  --font:"PSK","TH SarabunPSK","TH Sarabun New",sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --navy:#1e3a8a; --navy2:#0b1f4d; --blue:#2563eb; --sky:#3b82f6;
+}
+[data-theme="light"]{
+  --bg:radial-gradient(at 12% -10%,#d9f0ff 0,transparent 55%),radial-gradient(at 95% 10%,#bcd9ff 0,transparent 45%),linear-gradient(165deg,#eef7ff 0%,#d4e9ff 30%,#a9cff5 62%,#6f9fe0 100%);
+  --bgc:#a9cff5; --grid:rgba(30,58,138,.07);
+  --ink:#0b2150; --ink2:#3f5a8a; --head:#0b1f4d; --accent-t:#1d4ed8;
+  --panel:rgba(255,255,255,.64); --panel2:rgba(255,255,255,.82); --edge:rgba(255,255,255,.85); --line:rgba(30,58,138,.12);
+  --chip:rgba(30,58,138,.08); --hover:rgba(147,197,253,.32); --sel:rgba(59,130,246,.24);
+  --shadow:0 10px 30px rgba(30,64,175,.13); --field:rgba(255,255,255,.9); --fieldb:#bfdbfe;
+  --navbg:rgba(255,255,255,.7); --on:#1e3a8a; --onink:#fff; --zebra:rgba(255,255,255,.4); --tfoot:rgba(30,58,138,.08);
+}
+[data-theme="dark"]{
+  --bg:radial-gradient(at 10% -10%,rgba(59,130,246,.35) 0,transparent 50%),radial-gradient(at 100% 0%,rgba(56,189,248,.18) 0,transparent 45%),linear-gradient(165deg,#0a1330 0%,#0d1c45 45%,#122a63 100%);
+  --bgc:#0d1c45; --grid:rgba(147,197,253,.06);
+  --ink:#e6efff; --ink2:#a9bde3; --head:#ffffff; --accent-t:#93c5fd;
+  --panel:rgba(16,30,72,.62); --panel2:rgba(16,30,72,.85); --edge:rgba(147,197,253,.18); --line:rgba(147,197,253,.16);
+  --chip:rgba(147,197,253,.12); --hover:rgba(59,130,246,.22); --sel:rgba(59,130,246,.34);
+  --shadow:0 10px 30px rgba(0,0,0,.35); --field:rgba(10,22,56,.85); --fieldb:rgba(147,197,253,.35);
+  --navbg:rgba(10,22,56,.72); --on:#2563eb; --onink:#fff; --zebra:rgba(255,255,255,.03); --tfoot:rgba(147,197,253,.08);
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:var(--font);font-size:21px;line-height:1.35;color:var(--ink);min-height:100vh;background:var(--bg);background-color:var(--bgc);background-attachment:fixed}
+body::before{content:"";position:fixed;inset:0 0 auto;height:340px;pointer-events:none;z-index:0;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:28px 28px;-webkit-mask-image:linear-gradient(#000,transparent);mask-image:linear-gradient(#000,transparent)}
+button,select,a,input{font-family:var(--font)}
+:focus-visible{outline:3px solid #f59e0b;outline-offset:2px}
+.sprite{position:absolute;width:0;height:0;overflow:hidden}
+.nowrap{white-space:nowrap}
+svg.i{width:22px;height:22px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* ===== theme wipe (View Transitions) ===== */
+::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
+
+/* ===== app shell ===== */
+.app{position:relative;z-index:1;display:grid;grid-template-columns:272px minmax(0,1fr);min-height:100vh;transition:grid-template-columns .3s var(--ease)}
+.app.mini{grid-template-columns:84px minmax(0,1fr)}
+
+/* sidebar */
+.side{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;padding:14px 12px;gap:4px;
+  background:var(--navbg);border-right:1px solid var(--edge);-webkit-backdrop-filter:blur(16px) saturate(140%);backdrop-filter:blur(16px) saturate(140%);overflow:hidden auto;z-index:70}
+.sb-top{display:flex;align-items:center;gap:10px;padding:2px 4px 12px;border-bottom:1px solid var(--line);margin-bottom:6px}
+.sb-top img{width:44px;height:44px;border-radius:12px;background:#fff;padding:2px;flex:none;box-shadow:0 0 14px rgba(59,130,246,.45)}
+.sb-name{flex:1;min-width:0;line-height:1.1}
+.sb-name b{display:block;font-size:22px;color:var(--head);white-space:nowrap}
+.sb-name small{display:block;font-size:16px;color:var(--ink2);line-height:1.15}
+.iconbtn{display:inline-grid;place-items:center;min-width:44px;min-height:44px;border-radius:12px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);cursor:pointer;transition:background .2s,box-shadow .2s}
+.iconbtn:hover{background:var(--hover);box-shadow:0 0 14px rgba(59,130,246,.35)}
+.grp{font-size:15.5px;font-weight:700;letter-spacing:.06em;color:var(--ink2);padding:12px 10px 4px;white-space:nowrap}
+.nav{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:3px}
+.nav a{position:relative;display:flex;align-items:center;gap:12px;min-height:46px;padding:6px 12px;border-radius:12px;color:var(--ink);text-decoration:none;font-size:20px;white-space:nowrap;
+  transition:background .2s,color .2s,box-shadow .2s,transform .2s}
+.nav a:hover{background:var(--hover)}
+.nav a:active{transform:scale(.98)}
+.nav a .tx{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis}
+.nav a .end{display:inline-flex;align-items:center;color:var(--ink2)}
+.nav a .end svg{width:18px;height:18px}
+.nav a .cnt{font-size:16px;font-weight:700;min-width:26px;height:24px;padding:0 7px;border-radius:999px;display:inline-grid;place-items:center;background:var(--chip);color:var(--ink2)}
+.nav a.on{background:var(--on);color:var(--onink);font-weight:700;box-shadow:0 6px 18px rgba(30,58,138,.35),0 0 16px rgba(59,130,246,.45)}
+.nav a.on .end,.nav a.on .cnt{color:#fff}.nav a.on .cnt{background:rgba(255,255,255,.2)}
+.sub{list-style:none;margin:2px 0 4px 23px;padding:0 0 0 14px;border-left:2px solid var(--line);display:flex;flex-direction:column;gap:2px;overflow:hidden;
+  max-height:400px;transition:max-height .35s var(--ease),opacity .25s}
+.sub.closed{max-height:0;opacity:0;visibility:hidden}
+.sub a{min-height:44px;font-size:19px;color:var(--ink2);padding:4px 12px}
+.sub a.cur{background:var(--chip);color:var(--head);font-weight:700}
+.sub a.cur::before{content:"";position:absolute;left:-16px;top:10px;bottom:10px;width:2px;border-radius:2px;background:var(--sky);box-shadow:0 0 8px var(--sky)}
+.chev{transition:transform .25s var(--ease)}.open>.chev,.nav a[aria-expanded="true"] .chev{transform:rotate(90deg)}
+.sb-foot{margin-top:auto;display:flex;align-items:center;gap:10px;padding:12px 6px 2px;border-top:1px solid var(--line)}
+.sb-foot .av{width:42px;height:42px;border-radius:50%;flex:none;background:#fff;padding:2px;box-shadow:0 0 0 2px rgba(255,255,255,.9),0 0 14px rgba(59,130,246,.55)}
+.sb-foot .who{min-width:0;line-height:1.15}
+.sb-foot .who b{display:block;font-size:17px;color:var(--head)}.sb-foot .who small{display:block;font-size:15.5px;color:var(--ink2)}
+/* mini sidebar */
+.app.mini .sb-name,.app.mini .grp,.app.mini .nav a .tx,.app.mini .nav a .end,.app.mini .sub,.app.mini .sb-foot .who{display:none}
+.app.mini .sb-top{flex-direction:column}
+.app.mini .nav a{justify-content:center;padding:6px}
+.app.mini .sb-foot{justify-content:center}
+.tipn{position:fixed;z-index:90;pointer-events:none;background:rgba(11,31,77,.95);color:#fff;font-size:17px;padding:4px 10px;border-radius:8px;box-shadow:0 0 14px rgba(59,130,246,.5);display:none}
+
+/* topbar */
+.main{min-width:0;display:flex;flex-direction:column}
+.top{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:12px;padding:10px clamp(12px,2.4vw,30px);
+  background:var(--navbg);border-bottom:1px solid var(--edge);-webkit-backdrop-filter:blur(16px) saturate(140%);backdrop-filter:blur(16px) saturate(140%)}
+.crumb{display:flex;align-items:center;gap:6px;font-size:18px;color:var(--ink2);white-space:nowrap;min-width:0}
+.crumb svg{width:16px;height:16px}
+.crumb b{color:var(--head)}
+.search{flex:1;max-width:440px;margin-left:auto;position:relative}
+.search svg{position:absolute;left:12px;top:50%;translate:0 -50%;color:var(--ink2);width:18px;height:18px}
+.search input{width:100%;min-height:44px;font-size:19px;color:var(--ink);background:var(--field);border:1px solid var(--fieldb);border-radius:12px;padding:4px 44px 4px 38px;outline:none}
+.search input::placeholder{color:var(--ink2)}
+.search input:focus{border-color:var(--sky);box-shadow:0 0 0 3px rgba(59,130,246,.22)}
+.search kbd{position:absolute;right:10px;top:50%;translate:0 -50%;font:700 15px var(--font);color:var(--ink2);border:1px solid var(--line);border-radius:6px;padding:0 6px;background:var(--chip)}
+.search input:not(:placeholder-shown)~kbd{display:none}
+.sres{position:absolute;left:0;right:0;top:calc(100% + 6px);background:var(--panel2);border:1px solid var(--edge);border-radius:14px;box-shadow:var(--shadow);padding:6px;display:none;
+  -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
+.sres.show{display:block;animation:pop .18s var(--ease)}
+.sres a{display:flex;justify-content:space-between;align-items:center;gap:10px;min-height:44px;padding:4px 12px;border-radius:10px;color:var(--ink);text-decoration:none;font-size:19px}
+.sres a small{color:var(--ink2);font-size:16px}
+.sres a:hover,.sres a.hi{background:var(--hover)}
+.sres .none{padding:8px 12px;color:var(--ink2);font-size:18px}
+@keyframes pop{from{opacity:0;translate:0 -6px}to{opacity:1;translate:0 0}}
+.menubtn{display:none}
+.srcbadge{display:inline-flex;align-items:center;gap:8px;padding:4px 14px;min-height:36px;border-radius:999px;background:var(--navy);color:#fff;font-size:17px;font-weight:700;white-space:nowrap;
+  box-shadow:0 0 0 1px rgba(147,197,253,.7),0 0 18px rgba(59,130,246,.6)}
+.srcbadge{border:0;cursor:pointer;font-family:var(--font)}
+.srcbadge.err{background:#991b1b}
+.dot.load{background:#fbbf24;box-shadow:0 0 10px #fbbf24;animation-duration:1s}.dot.err{background:#fca5a5;box-shadow:0 0 10px #fca5a5;animation:none}
+.ld{opacity:.55;animation:pulse 1.2s ease-in-out infinite}
+.dot{width:9px;height:9px;border-radius:50%;background:#7dd3fc;box-shadow:0 0 10px #7dd3fc;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.35}}
+#themeBtn .sun{display:none}[data-theme="dark"] #themeBtn .sun{display:block}[data-theme="dark"] #themeBtn .moon{display:none}
+
+/* page */
+.page{padding:20px clamp(12px,2.4vw,30px) 0;display:flex;flex-direction:column;gap:18px;transition:opacity .22s,translate .22s var(--ease)}
+.page[hidden]{display:none}
+.brandrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.brandrow .pill{display:inline-block;padding:5px 18px;border-radius:999px;font-size:20px;font-weight:700;color:#fff;
+  background:linear-gradient(90deg,#2563eb,#38bdf8);box-shadow:0 4px 14px rgba(37,99,235,.35),0 0 16px rgba(56,189,248,.45)}
+.brandrow .org{font-size:19px;color:var(--ink2)}
+.phead{display:flex;gap:14px;align-items:flex-end;flex-wrap:wrap;margin-top:-6px}
+.phead .hg{flex:1;min-width:260px}
+h1{font-size:38px;font-weight:700;margin:0;line-height:1.08;color:var(--head)}
+.lede{margin:2px 0 0;color:var(--ink2);font-size:19px}
+
+.card,.glass{background:var(--panel);border:1px solid var(--edge);border-radius:18px;-webkit-backdrop-filter:blur(14px) saturate(140%);backdrop-filter:blur(14px) saturate(140%);
+  box-shadow:var(--shadow);transition:box-shadow .25s,border-color .25s,transform .25s}
+.card:hover{border-color:#93c5fd;box-shadow:0 0 0 1px #93c5fd,0 0 28px rgba(59,130,246,.35),var(--shadow)}
+.reveal{opacity:0;translate:0 22px;animation:rise .7s var(--ease) forwards}
+@keyframes rise{to{opacity:1;translate:0 0}}
+.dl04{animation-delay:.04s}.dl08{animation-delay:.08s}.dl12{animation-delay:.12s}.dl18{animation-delay:.18s}.dl24{animation-delay:.24s}.dl30{animation-delay:.30s}.dl34{animation-delay:.34s}.dl40{animation-delay:.40s}.dl46{animation-delay:.46s}.dl52{animation-delay:.52s}.dl58{animation-delay:.58s}
+section[id]{scroll-margin-top:80px}
+
+/* filters */
+.filters{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:flex-end;padding:14px 18px}
+.f{display:flex;flex-direction:column;gap:2px;min-width:0}
+.f label{font-size:17px;color:var(--ink2)}
+select{font-size:19px;color:var(--ink);background-color:var(--field);border:1px solid var(--fieldb);border-radius:10px;min-height:44px;padding:2px 10px;min-width:12em;outline:none;cursor:pointer}
+select:focus{border-color:var(--sky);box-shadow:0 0 0 3px rgba(59,130,246,.2)}
+select option{color:#0b2150;background:#fff}
+.spacer{flex:1}
+.status{font-size:17px;color:var(--ink2);flex-basis:100%}
+.status b{color:var(--accent-t)}
+.warn{flex-basis:100%;font-size:17px;font-weight:700;color:#92400e;background:#fef3c7;border:1px solid #fcd34d;border-radius:10px;padding:6px 12px}
+[data-theme="dark"] .warn{color:#fde68a;background:rgba(146,64,14,.35);border-color:rgba(252,211,77,.45)}
+.warn[hidden]{display:none}
+.btn{position:relative;overflow:hidden;font-size:19px;font-weight:700;border-radius:10px;padding:6px 18px;min-height:44px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;text-decoration:none}
+.btn.ghost{background:var(--field);color:var(--accent-t);border:1.5px solid currentColor}
+.btn.ghost:hover{box-shadow:0 0 0 1px #93c5fd,0 0 16px rgba(59,130,246,.45)}
+.btn.solid{color:#fff;border:0;background:linear-gradient(135deg,#1e3a8a,#2563eb);box-shadow:0 0 14px rgba(59,130,246,.45)}
+.btn.solid::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-20deg);animation:shine 2.8s ease-in-out infinite}
+.btn.solid:hover{box-shadow:0 0 0 1px #93c5fd,0 0 24px rgba(59,130,246,.75)}
+@keyframes shine{0%{left:-60%}55%,100%{left:130%}}
+
+/* KPI */
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.kpi{border-radius:18px;padding:14px 16px;color:#e0ecff;background:linear-gradient(150deg,#1e3a8a 0%,#0b1f4d 100%);border:1px solid rgba(147,197,253,.45);
+  box-shadow:0 10px 28px rgba(11,31,77,.35);transition:box-shadow .25s,transform .25s;min-width:0}
+.kpi:hover{box-shadow:0 0 0 1px #93c5fd,0 0 30px rgba(96,165,250,.6);transform:translateY(-3px)}
+.kpi .l{font-size:18px;color:#cfdfff;line-height:1.2;min-height:2.4em}
+.kpi .v{font-size:50px;font-weight:700;line-height:1;margin:6px 0 4px;color:#fff;font-variant-numeric:tabular-nums;text-shadow:0 0 14px rgba(96,165,250,.95),0 0 32px rgba(59,130,246,.6)}
+.kpi .s{font-size:17px;color:#cfdfff}
+
+/* sub-dashboards */
+.subs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{padding:18px 20px;min-width:0;position:relative}
+.dash{display:flex;flex-direction:column}
+.dash .tag{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.dash .no{display:inline-grid;place-items:center;min-width:44px;height:34px;padding:0 8px;border-radius:10px;background:var(--navy);color:#fff;font-weight:700;font-size:20px;box-shadow:0 0 12px rgba(59,130,246,.5)}
+.dash .cat{font-size:19px;font-weight:700;color:var(--accent-t)}
+.dash h2{font-size:26px;font-weight:700;margin:0 0 4px;color:var(--head);line-height:1.15}
+.dash .desc{margin:0 0 12px;color:var(--ink2);font-size:18px}
+.dash dl{margin:0 0 16px;flex:1}
+.dash dl div{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:8px 2px;border-bottom:1px solid var(--line)}
+.dash dl div:last-child{border-bottom:0}
+.dash dt{color:var(--ink2);font-size:19px;flex:1 1 0;min-width:0}
+.dash dl div{flex-wrap:wrap;row-gap:2px}
+.dash dd{flex:none;white-space:nowrap;margin-left:auto;line-height:1.25}
+.dash dd[data-k$="top1"]{flex:1 1 100%;white-space:normal;font-size:19px}
+.dash dd{margin:0;font-weight:700;font-size:21px;color:var(--ink);font-variant-numeric:tabular-nums;text-align:right}
+.dash .btn{width:100%;min-height:48px;font-size:19px;padding:6px 10px;white-space:nowrap}
+
+/* table */
+h2.t{font-size:26px;font-weight:700;margin:0 0 2px;color:var(--head);line-height:1.15}
+.sub-t{margin:0 0 10px;color:var(--ink2);font-size:18px}
+.tablewrap{overflow-x:auto;border-radius:12px;-webkit-overflow-scrolling:touch}
+table{border-collapse:separate;border-spacing:0;width:100%;min-width:640px;font-size:20px;font-variant-numeric:tabular-nums}
+th,td{padding:10px 14px;text-align:right;white-space:nowrap;border-bottom:1px solid var(--line)}
+th{background:#1e3a8a;color:#fff;font-weight:700}
+th:first-child{border-radius:12px 0 0 0}th:last-child{border-radius:0 12px 0 0}
+th:first-child,td:first-child{text-align:left}
+td:first-child{font-weight:700;color:var(--head)}
+tbody tr{transition:background .15s,opacity .2s}
+tbody tr:nth-child(even){background:var(--zebra)}
+tbody tr:hover{background:var(--hover)}
+tbody tr.sel{background:var(--sel)}
+tbody tr.dim{opacity:.5}
+tfoot td{font-weight:700;color:var(--head);background:var(--tfoot);border-bottom:0}
+
+/* notes + footer */
+.notes{padding:12px 18px}
+.notes ul{margin:0;padding-left:20px;font-size:17px;color:var(--ink2);line-height:1.5}
+footer{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;color:var(--head);font-size:18px;padding:10px 0 18px;border-top:1px solid var(--edge);text-align:center}
+footer img{width:34px;height:34px;border-radius:50%;background:#fff;box-shadow:0 0 12px rgba(59,130,246,.6)}
+footer .fx{display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:center}
+footer .brand{font-weight:700}footer .brand span{color:var(--accent-t)}
+footer .src{flex-basis:100%;font-size:16px;color:var(--head)}
+
+/* ===== embedded dashboard view ===== */
+.view-in{animation:viewIn .38s var(--ease) both}
+@keyframes viewIn{from{opacity:0;translate:0 14px;filter:blur(2px)}to{opacity:1;translate:0 0;filter:none}}
+.fview{display:flex;flex-direction:column;gap:10px;padding:12px clamp(10px,1.6vw,20px) 12px;height:calc(100dvh - 65px);min-height:420px}
+.fview[hidden]{display:none}
+.fbar{display:flex;align-items:center;gap:12px;padding:8px 10px 8px 12px;border-radius:14px;background:var(--panel);border:1px solid var(--edge);box-shadow:var(--shadow);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.fno{display:inline-grid;place-items:center;min-width:44px;height:34px;border-radius:10px;background:var(--navy);color:#fff;font-weight:700;font-size:20px;box-shadow:0 0 12px rgba(59,130,246,.5)}
+.ft{flex:1;min-width:0;line-height:1.15}
+.ft b{display:block;font-size:23px;color:var(--head);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ft small{display:block;font-size:16px;color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fbar .btn{min-height:44px;font-size:18px;padding:4px 14px}
+.fbox{position:relative;flex:1;min-height:0;border-radius:16px;overflow:hidden;border:1px solid var(--edge);box-shadow:var(--shadow);background:#eef7ff}
+.fbox iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:none;background:#eef7ff}
+.fbox iframe.show{display:block}
+.fload{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;gap:12px;font-size:20px;color:#3f5a8a;background:rgba(238,247,255,.92);transition:opacity .3s}
+.fload.hide{opacity:0;pointer-events:none}
+.spin{width:26px;height:26px;border-radius:50%;border:3px solid #bfdbfe;border-top-color:#2563eb;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.scrim{display:none}
+@media (pointer:coarse){ .card:hover{border-color:var(--edge);box-shadow:var(--shadow)} .kpi:hover{transform:none} }
+@media (max-width:1320px){ .crumb{display:none} }
+@media (max-width:1180px){ #apiTxt{max-width:240px;overflow:hidden;text-overflow:ellipsis} }
+@media (max-width:980px){
+  .app,.app.mini{grid-template-columns:minmax(0,1fr)}
+  .side{position:fixed;left:0;top:0;bottom:0;width:min(300px,86vw);height:auto;transform:translateX(-105%);transition:transform .3s var(--ease);box-shadow:var(--shadow);background:var(--panel2)}
+  .side.open{transform:none}
+  #miniBtn{display:none}
+  .app.mini .sb-name,.app.mini .grp,.app.mini .nav a .tx,.app.mini .nav a .end,.app.mini .sb-foot .who{display:revert}
+  .scrim{display:block;position:fixed;inset:0;z-index:65;background:rgba(11,31,77,.42);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:opacity .25s}
+  .scrim.show{opacity:1;pointer-events:auto}
+  .menubtn{display:inline-grid}
+  .crumb{display:none}
+  .srcbadge{min-width:44px;min-height:44px;padding:0;justify-content:center}
+  #apiTxt{display:none}
+  .fview{height:calc(100dvh - 61px);padding:8px}
+  .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .subs{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:640px){
+  body{font-size:19px}
+  .top{gap:8px;padding:8px 10px}
+  .search kbd{display:none}
+  .fbar .lbl{display:none}.fbar{gap:8px;padding:6px 8px}.ft b{font-size:20px}.ft small{display:none}
+  .page{padding:14px 10px 0;gap:14px}
+  h1{font-size:30px}.lede{font-size:17px}
+  .brandrow .pill{font-size:18px}.brandrow .org{font-size:17px}
+  .filters{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;padding:12px}
+  .filters select{min-width:0;width:100%}
+  .filters .f.reset label,.filters .spacer{display:none}
+  .filters .btn{width:100%}
+  .kpi .v{font-size:40px}.kpi .l{font-size:16px}.kpi .s{font-size:15.5px}
+  .card{padding:14px}.dash h2,h2.t{font-size:23px}
+  table{font-size:18px}th,td{padding:9px 10px}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;translate:none}}
+</style>
+</head>
+<body>
+<svg class="sprite" width="0" height="0" aria-hidden="true">
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-activity" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></symbol>
+  <symbol id="i-clip" viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></symbol>
+  <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></symbol>
+  <symbol id="i-ext" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></symbol>
+  <symbol id="i-side" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
+  <symbol id="i-reload" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+</svg>
+
+<div class="app" id="app">
+<aside class="side" id="side" aria-label="เมนูแดชบอร์ด">
+  <div class="sb-top">
+    <img src="data:image/webp;base64,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" alt="ตรากระทรวงสาธารณสุข">
+    <div class="sb-name"><b>NYK Health</b><small>สำนักงานสาธารณสุข<br>จังหวัดนครนายก</small></div>
+    <button class="iconbtn" id="miniBtn" type="button" aria-label="ย่อ/ขยายเมนู" aria-pressed="false"><svg class="i"><use href="#i-side"/></svg></button>
+    <button class="iconbtn menubtn" id="closeBtn" type="button" aria-label="ปิดเมนู"><svg class="i"><use href="#i-x"/></svg></button>
+  </div>
+
+  <div class="grp">ภาพรวม</div>
+  <ul class="nav">
+    <li>
+      <a href="#home" class="on" id="homeLink" data-route="home" aria-current="page" aria-expanded="true" data-tip="หน้าหลัก">
+        <svg class="i"><use href="#i-home"/></svg><span class="tx">หน้าหลัก</span><span class="end"><svg class="i chev"><use href="#i-chev"/></svg></span></a>
+      <ul class="sub" id="homeSub">
+        <li><a href="#home" data-spy="kpi"><span class="tx">ตัวเลขสำคัญ</span></a></li>
+        <li><a href="#home" data-spy="subs"><span class="tx">แดชบอร์ดย่อย</span></a></li>
+        <li><a href="#home" data-spy="dist"><span class="tx">เปรียบเทียบรายอำเภอ</span></a></li>
+        <li><a href="#home" data-spy="notes"><span class="tx">หมายเหตุ</span></a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <div class="grp">แดชบอร์ด</div>
+  <ul class="nav" id="dashNav">
+    <li><a href="#population" data-route="population" data-tip="ประชากร" data-kw="ประชากร ชนิดการอยู่อาศัย population"><svg class="i"><use href="#i-users"/></svg><span class="tx">ประชากร</span><span class="end"><span class="cnt">01</span></span></a></li>
+    <li><a href="#disease" data-route="disease" data-tip="การป่วย" data-kw="การป่วย 298 กลุ่มโรค ผู้ป่วยนอก ผู้ป่วยใน disease opd ipd"><svg class="i"><use href="#i-activity"/></svg><span class="tx">การป่วย</span><span class="end"><span class="cnt">02</span></span></a></li>
+    <li><a href="#death" data-route="death" data-tip="การตาย" data-kw="การตาย สาเหตุการตาย death icd-10"><svg class="i"><use href="#i-clip"/></svg><span class="tx">การตาย</span><span class="end"><span class="cnt">03</span></span></a></li>
+  </ul>
+
+  <div class="grp">แหล่งข้อมูล</div>
+  <ul class="nav">
+    <li><a href="https://opendata.moph.go.th/" target="_blank" rel="noopener noreferrer" data-tip="MoPH Open Data"><svg class="i"><use href="#i-db"/></svg><span class="tx">MoPH Open Data</span><span class="end"><svg class="i"><use href="#i-ext"/></svg></span></a></li>
+  </ul>
+
+  <div class="sb-foot">
+    <img class="av" src="data:image/webp;base64,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" alt="ตรากระทรวงสาธารณสุข">
+    <div class="who"><b>สำนักงานสาธารณสุข<br>จังหวัดนครนายก</b><small>NYK Health Analytics</small></div>
+  </div>
+</aside>
+<div class="scrim" id="scrim"></div>
+
+<div class="main">
+  <div class="top" id="top">
+    <button class="iconbtn menubtn" id="menuBtn" type="button" aria-label="เปิดเมนูแดชบอร์ด" aria-expanded="false" aria-controls="side"><svg class="i"><use href="#i-menu"/></svg></button>
+    <nav class="crumb" aria-label="ตำแหน่งหน้า"><span>NYK Health</span><svg class="i"><use href="#i-chev"/></svg><span id="crumbGrp">ภาพรวม</span><svg class="i"><use href="#i-chev"/></svg><b id="crumbCur">หน้าหลัก</b></nav>
+    <div class="search">
+      <svg class="i"><use href="#i-search"/></svg>
+      <input id="q" type="search" placeholder="ค้นหาแดชบอร์ด…" autocomplete="off" aria-label="ค้นหาแดชบอร์ด" aria-controls="sres">
+      <kbd>/</kbd>
+      <div class="sres" id="sres" role="listbox"></div>
+    </div>
+    <button class="srcbadge" id="apiBadge" type="button" title="โหลดข้อมูลใหม่"><span class="dot load" id="apiDot"></span><span id="apiTxt">กำลังเชื่อมต่อ API…</span></button>
+    <button class="iconbtn" id="themeBtn" type="button" aria-label="สลับโหมดสว่าง/มืด"><svg class="i moon"><use href="#i-moon"/></svg><svg class="i sun"><use href="#i-sun"/></svg></button>
+  </div>
+
+  <div class="page" id="page">
+    <div class="brandrow reveal"><span class="pill">NYK Health Analytics</span><span class="org">สำนักงานสาธารณสุขจังหวัดนครนายก <span class="nowrap">· ข้อมูลจาก HDC</span></span></div>
+    <div class="phead reveal dl04" >
+      <div class="hg">
+        <h1>NAKHON NAYOK HEALTH DATA</h1>
+        <p class="lede">ภาพรวมสาธารณสุข จังหวัดนครนายก · รวบรวมจากข้อมูล MoPH Open Data (HDC)</p>
+      </div>
+    </div>
+
+    <section class="filters glass reveal dl08"  aria-label="ตัวกรอง">
+      <div class="f"><label for="selYear">ปีงบประมาณ</label>
+        <select id="selYear"></select></div>
+      <div class="f"><label for="selDist">อำเภอ</label>
+        <select id="selDist"><option value="all" selected>ทุกอำเภอ</option><option value="2601">เมืองนครนายก</option><option value="2602">ปากพลี</option><option value="2603">บ้านนา</option><option value="2604">องครักษ์</option></select></div>
+      <div class="spacer"></div>
+      <div class="f reset"><label>&nbsp;</label><button class="btn ghost" id="btnReset" type="button">ล้างตัวกรอง</button></div>
+      <div class="status" id="status" aria-live="polite"></div>
+      <div class="warn" id="fyWarn" role="note" hidden>ปีงบประมาณปัจจุบันยังไม่ครบปี ตัวเลขจะเพิ่มขึ้นเมื่อ HDC ประมวลผลข้อมูลเพิ่ม ไม่ควรนำไปเทียบกับปีที่ครบแล้วโดยตรง</div>
+    </section>
+
+    <section class="kpis" id="kpi" aria-label="ตัวเลขสำคัญ">
+      <div class="kpi reveal dl12" ><div class="l">ประชากรในพื้นที่รับผิดชอบ</div><div class="v" data-k="pop_area">—</div><div class="s" id="s_pop">จากแดชบอร์ดประชากร</div></div>
+      <div class="kpi reveal dl18" ><div class="l">ยอดการมารับบริการรวม</div><div class="v" data-k="visit_total">—</div><div class="s" id="s_visit">จากแดชบอร์ดการป่วย</div></div>
+      <div class="kpi reveal dl24" ><div class="l">จำนวนการตาย</div><div class="v" data-k="death_total">—</div><div class="s" id="s_death">จากแดชบอร์ดการตาย</div></div>
+      <div class="kpi reveal dl30" ><div class="l">สัดส่วนสาเหตุการตายที่ไม่ชัดเจน</div><div class="v" data-k="death_ill_defined_pct">—</div><div class="s" id="s_ill">รหัส R00–R99 ต่อการตายทั้งหมด</div></div>
+    </section>
+
+    <section class="subs" id="subs" aria-label="แดชบอร์ดย่อย">
+      <article class="card dash reveal dl34" >
+        <div class="tag"><span class="no">01</span><span class="cat">ประชากร</span></div>
+        <h2>ประชากรตามชนิดการอยู่อาศัย</h2>
+        <p class="desc">จำแนกประชากรตามชนิดการอยู่อาศัย (Type Area) รายอำเภอและหน่วยบริการ เปรียบเทียบ 3 ปีงบประมาณ</p>
+        <dl>
+          <div><dt>ประชากรในพื้นที่</dt><dd data-k="pop_area">—</dd></div>
+          <div><dt>ขึ้นทะเบียนแต่ไม่อยู่จริง</dt><dd data-k="pop_registered_absent">—</dd></div>
+          <div><dt>การนับซ้ำข้ามหน่วย</dt><dd data-k="pop_duplicate">—</dd></div>
+        </dl>
+        <a class="btn solid" href="#population">เปิดแดชบอร์ดประชากร →</a>
+      </article>
+      <article class="card dash reveal dl40" >
+        <div class="tag"><span class="no">02</span><span class="cat">การป่วย</span></div>
+        <h2>สาเหตุการป่วย 298 กลุ่มโรค</h2>
+        <p class="desc">การมารับบริการผู้ป่วยนอกและผู้ป่วยใน จำแนกตาม 298 กลุ่มโรค เพศ กลุ่มอายุ และหน่วยบริการ</p>
+        <dl>
+          <div><dt>ยอดการมารับบริการรวม</dt><dd data-k="visit_total">—</dd></div>
+          <div><dt>กลุ่มโรคอันดับ 1</dt><dd data-k="disease_top1">—</dd></div>
+          <div><dt>ผู้ป่วยอายุไม่เกิน 15 ปี</dt><dd data-k="visit_age_le15">—</dd></div>
+        </dl>
+        <a class="btn solid" href="#disease">เปิดแดชบอร์ดการป่วย →</a>
+      </article>
+      <article class="card dash reveal dl46" >
+        <div class="tag"><span class="no">03</span><span class="cat">การตาย</span></div>
+        <h2>สาเหตุการตาย</h2>
+        <p class="desc">สาเหตุการตายตามรหัส ICD-10 จำแนกเพศ อายุ หน่วยบริการ และหมู่บ้าน เปรียบเทียบ 3 ปีงบประมาณ</p>
+        <dl>
+          <div><dt>จำนวนการตาย</dt><dd data-k="death_total">—</dd></div>
+          <div><dt>สาเหตุอันดับ 1</dt><dd data-k="death_top1">—</dd></div>
+          <div><dt>สัดส่วนชาย : หญิง</dt><dd data-k="death_sex_ratio">—</dd></div>
+        </dl>
+        <a class="btn solid" href="#death">เปิดแดชบอร์ดการตาย →</a>
+      </article>
+    </section>
+
+    <section class="card reveal dl52" id="dist"  aria-labelledby="tDist">
+      <h2 class="t" id="tDist">เปรียบเทียบรายอำเภอ</h2>
+      <p class="sub-t" id="sDist">ปีงบประมาณล่าสุด · เลื่อนตารางไปทางซ้าย–ขวาได้บนมือถือ</p>
+      <div class="tablewrap" tabindex="0" aria-label="ตารางเปรียบเทียบรายอำเภอ">
+        <table>
+          <thead><tr><th scope="col">อำเภอ</th><th scope="col">ประชากร</th><th scope="col">การมารับบริการ</th><th scope="col">การตาย</th><th scope="col">สาเหตุไม่ชัดเจน (%)</th></tr></thead>
+          <tbody id="distBody">
+            <tr data-d="2601"><td>เมืองนครนายก</td><td data-k="d2601_pop">—</td><td data-k="d2601_visit">—</td><td data-k="d2601_death">—</td><td data-k="d2601_rpct">—</td></tr>
+            <tr data-d="2602"><td>ปากพลี</td><td data-k="d2602_pop">—</td><td data-k="d2602_visit">—</td><td data-k="d2602_death">—</td><td data-k="d2602_rpct">—</td></tr>
+            <tr data-d="2603"><td>บ้านนา</td><td data-k="d2603_pop">—</td><td data-k="d2603_visit">—</td><td data-k="d2603_death">—</td><td data-k="d2603_rpct">—</td></tr>
+            <tr data-d="2604"><td>องครักษ์</td><td data-k="d2604_pop">—</td><td data-k="d2604_visit">—</td><td data-k="d2604_death">—</td><td data-k="d2604_rpct">—</td></tr>
+          </tbody>
+          <tfoot><tr><td>รวมทั้งจังหวัด</td><td data-k="p_pop">—</td><td data-k="p_visit">—</td><td data-k="p_death">—</td><td data-k="p_rpct">—</td></tr></tfoot>
+        </table>
+      </div>
+    </section>
+
+    <section class="glass notes reveal dl58" id="notes"  aria-label="หมายเหตุ">
+      <ul>
+        <li>ปีงบประมาณปัจจุบันยังไม่สมบูรณ์ จึงไม่คำนวณการเปลี่ยนแปลงเทียบปีก่อน</li>
+        <li>ข้อมูลกลุ่มอายุไม่เกิน 15 ปีมีถึงเดือนธันวาคม 2567 (ปีงบ 2567 และบางส่วนของ 2568 ซึ่งมีเครื่องหมาย * กำกับ) ปีอื่นจึงแสดง "—"</li>
+        <li>ข้อมูลการตายอาจมีรายการซ้ำ</li>
+        <li>นิยามที่ใช้ (ตรงกับแดชบอร์ดย่อย): ประชากร = TYPEAREA 1+3 หลัง cleansing (s_persontype) · ขึ้นทะเบียนแต่ไม่อยู่จริง = TYPEAREA 2 · การนับซ้ำ = TYPEAREA 1+3 ก่อน − หลัง cleansing · การมารับบริการ = ครั้งผู้ป่วยนอก (s_opd10_sex) · การตาย = s_death_diag_sex_age</li>
+        <li>อำเภอของการตายนับตามที่ตั้งหน่วยบริการที่บันทึก เหมือนแดชบอร์ดการตาย ส่วนประชากรและการมารับบริการนับตามรหัสพื้นที่ในข้อมูล</li>
+      </ul>
+    </section>
+
+    <footer>
+      <div class="fx"><img src="data:image/webp;base64,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" alt="ตรากระทรวงสาธารณสุข"><span class="brand">Created by <span>APINYA Digital</span></span><span class="copy">© 2026 All Rights Reserved.</span></div>
+      <div class="src">ข้อมูล: MoPH Open Data · HDC กระทรวงสาธารณสุข</div>
+    </footer>
+  </div>
+
+  <div class="fview" id="fview" hidden>
+    <div class="fbar">
+      <span class="fno" id="fNo">01</span>
+      <div class="ft"><b id="fTitle">แดชบอร์ด</b><small id="fSub"></small></div>
+      <button class="iconbtn" id="fReload" type="button" aria-label="โหลดแดชบอร์ดใหม่" title="โหลดใหม่"><svg class="i"><use href="#i-reload"/></svg></button>
+      <a class="btn ghost" id="fOpen" href="#" target="_blank" rel="noopener noreferrer"><svg class="i"><use href="#i-ext"/></svg><span class="lbl">เปิดในแท็บใหม่</span></a>
+    </div>
+    <div class="fbox" id="fbox">
+      <div class="fload" id="fload"><span class="spin"></span>กำลังโหลดแดชบอร์ด…</div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="tipn" id="tipn"></div>
+
+<script>
+// ดีไซน์ยังไม่เชื่อม API: ค่าทุกช่อง (data-k) แสดง "—" ไว้ก่อน
+(function(){
+  const $=id=>document.getElementById(id);
+  const reduced=()=>matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const store={get:k=>{try{return localStorage.getItem(k)}catch(e){return null}},set:(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}}};
+
+  /* ---- ตัวกรอง ---- */
+  const selYear=$('selYear'), selDist=$('selDist');
+  /* ปีงบประมาณ: คำนวณจากวันที่ปัจจุบัน (ต.ค. ขึ้นปีงบใหม่) แสดง 3 ปีย้อนหลัง
+     เช่น 25 พ.ย. 2569 = ปีงบ 2570 → ตัวเลือก 2570, 2569, 2568 และเลื่อนเองเมื่อถึง 1 ต.ค. ของทุกปี */
+  const now=new Date();
+  const FY=now.getFullYear()+543+(now.getMonth()>=9?1:0);
+  const YEARS=[FY,FY-1,FY-2];
+  const el=(tag,props,kids)=>{const n=document.createElement(tag);if(props)Object.assign(n,props);(kids||[]).forEach(k=>n.append(k));return n;};
+  selYear.replaceChildren(...YEARS.map((y,i)=>el('option',{value:String(y),textContent:y+(i===0?' (ปีปัจจุบัน)':'')})));
+  selYear.value=String(FY);
+  window.NYK={fiscalYear:FY,years:YEARS,selected:()=>({year:+selYear.value,years:[+selYear.value,+selYear.value-1,+selYear.value-2],district:selDist.value})};
+  function render(){
+    const yv=+selYear.value;
+    const yTxt='ปีงบประมาณ '+yv+(yv===FY?' (ยังไม่ครบปี)':'');
+    const d=selDist.value, dTxt=selDist.options[selDist.selectedIndex].text;
+    $('status').replaceChildren('แสดง: ',el('b',{textContent:yTxt}),' · ',el('b',{textContent:d==='all'?'ทุกอำเภอ':'อ.'+dTxt}));
+    $('fyWarn').hidden=yv!==FY;
+    $('sDist').textContent=yTxt+' · เลื่อนตารางไปทางซ้าย–ขวาได้บนมือถือ';
+    // เมื่อเชื่อม API: ฟังเหตุการณ์ nyk:filter แล้วดึงข้อมูลปี detail.years (3 ปีย้อนหลังจากปีที่เลือก)
+    document.dispatchEvent(new CustomEvent('nyk:filter',{detail:NYK.selected()}));
+    document.querySelectorAll('#distBody tr').forEach(tr=>{
+      tr.classList.toggle('sel',d!=='all'&&tr.dataset.d===d);
+      tr.classList.toggle('dim',d!=='all'&&tr.dataset.d!==d);
+    });
+  }
+  selYear.addEventListener('change',render); selDist.addEventListener('change',render);
+  $('btnReset').addEventListener('click',()=>{selYear.value=String(FY);selDist.value='all';render();});
+  render();
+
+
+  /* ======================= ดึงข้อมูลจาก MoPH Open Data ======================= */
+  /* lookups: คัดลอกจาก repo death-noph (HOS, TAMB, ICD, HLOC) และ disease-noph (G = 298 กลุ่มโรค) */
+  const HOS={"10196":"รพ.สต.บ้านกะเหรี่ยง ต.เขาเพิ่ม","10863":"โรงพยาบาลปากพลี","10864":"โรงพยาบาลบ้านนา","10698":"โรงพยาบาลนครนายก","10865":"โรงพยาบาลองครักษ์","11491":"โรงพยาบาลโรงเรียนนายร้อยพระจุลจอมเกล้า","14904":"สุขศาลาศรีนครินทรวิโรฒ","14302":"สถานีอนามัยเฉลิมพระเกียรติฯ ร.9 ต.ทรายมูล","02394":"สถานีอนามัยเฉลิมพระเกียรติ 60 พรรษา นวมินทราชินี","02386":"รพ.สต.บ้านคลองเหมือง ต.วังกระโจม","02389":"รพ.สต.บ้านบางหอย ต.ศรีจุฬา","02402":"รพ.สต.บ้านใหม่ ต.เกาะหวาย","02403":"รพ.สต.บ้านสะแกซึง ต.เกาะโพธิ์","02404":"รพ.สต.บ้านดงข่า ต.เกาะโพธิ์","02405":"รพ.สต.บ้านพรหมเพชร ต.โคกกรวด","02407":"รพ.สต.บ้านหนองหัวลิงใน ต.หนองแสง","02408":"รพ.สต.บ้านบุ่งเข้ ต.หนองแสง","02406":"รพ.สต.บ้านเกาะกา ต.ท่าเรือ","02409":"รพ.สต.บ้านนาใหม่ ต.นาหินลาด","02410":"รพ.สต.บ้านหนองรี ต.บ้านพร้าว","02421":"รพ.สต.บ้านเขาน้อย ต.เขาเพิ่ม","02431":"รพ.สต.บ้านบางนางเล็ก ต.ทรายมูล","02422":"รพ.สต.บ้านละว้า ต.ศรีกะอาง","02433":"รพ.สต.บ้านใน ต.บางลูกเสือ","02412":"รพ.สต.บ้านหนองคันจาม ต.บ้านพริก","10195":"รพ.สต.บ้านดง ต.สาริกา","02419":"รพ.สต.บ้านกร่างประตูวัง ต.ป่าขะ","02385":"รพ.สต.บ้านท่าข่อย ต.บ้านใหญ่","02387":"รพ.สต.บ้านท่าทราย ต.ท่าทราย","02388":"รพ.สต.บ้านชวดบัว ต.ดอนยอ","02392":"รพ.สต.บ้านท่าแห ต.ดงละคร","02393":"รพ.สต.บ้านศรีนาวา ต.ศรีนาวา","02395":"รพ.สต.บ้านเขานางบวช ต.สาริกา","02396":"รพ.สต.บ้านวังยายฉิม ต.หินตั้ง","02397":"รพ.สต.บ้านเขาทุเรียน ต.เขาพระ","02398":"รพ.สต.บ้านปากช่อง ต.เขาพระ","02399":"รพ.สต.บ้านตอไม้แดง ต.พรหมณี","02400":"รพ.สต.บ้านวังปลาจีด ต.พรหมณี","02401":"รพ.สต.บ้านไผ่ล้อม ต.ปากพลี","02413":"รพ.สต.บ้านพริก ต.บ้านพริก","02416":"รพ.สต.บ้านคลอง 30 ต.ทองหลาง","02417":"รพ.สต.บ้านบางอ้อ ต.บางอ้อ","02418":"รพ.สต.บ้านแหลมไม้ย้อย ต.พิกุลออก","02420":"รพ.สต.บ้านเขาเพิ่ม ต.เขาเพิ่ม","02423":"รพ.สต.บ้านปากคลอง 22 ต.พระอาจารย์","02424":"รพ.สต.บ้านบึงพระอาจารย์ ต.พระอาจารย์","02426":"รพ.สต.บ้านคลอง 23 ฝั่งเหนือ ต.ศีรษะกระบือ","02425":"รพ.สต.บ้านลาดช้าง ต.บึงศาล","02427":"รพ.สต.บ้านคลอง 24 ฝั่งใต้ ต.ศีรษะกระบือ","02432":"รพ.สต.บ้านบน ต.บางปลากด","02434":"รพ.สต.บ้านทำนบ ต.ชุมพล","02414":"รพ.สต.บ้านไผ่ขวาง ต.อาษา","11601":"รพ.สต.บ้านปากกระทุ่ม ต.พรหมณี","02384":"รพ.สต.บ้านเจดีย์ทอง ต.ท่าช้าง","02391":"รพ.สต.บ้านหนองทองทราย ต.ดงละคร","13825":"รพ.สต.บ้านคลอง 14 เหนือ ต.คลองใหญ่","02411":"รพ.สต.บ้านทางกระบือ ต.บ้านพร้าว","02428":"รพ.สต.บ้านเขมรฝั่งใต้ ต.โพธิ์แทน","02429":"รพ.สต.บ้านเตยน้อย ต.บางสมบูรณ์","02430":"รพ.สต.บ้านประตูน้ำบางสมบูรณ์ ต.บางสมบูรณ์","02390":"รพ.สต.บ้านบางปรัง ต.ศรีจุฬา","02415":"รพ.สต.บ้านทองหลาง ต.ทองหลาง","99842":"สุขศาลาศรีนครินทรวิโรฒ"};
+  const TAMB={"260101":"นครนายก","260102":"ท่าช้าง","260103":"บ้านใหญ่","260104":"วังกระโจม","260105":"ท่าทราย","260106":"ดอนยอ","260107":"ศรีจุฬา","260108":"ดงละคร","260109":"ศรีนาวา","260110":"สาริกา","260111":"หินตั้ง","260112":"เขาพระ","260113":"พรหมณี","260201":"เกาะหวาย","260202":"เกาะโพธิ์","260203":"ปากพลี","260204":"โคกกรวด","260205":"ท่าเรือ","260206":"หนองแสง","260207":"นาหินลาด","260301":"บ้านนา","260302":"บ้านพร้าว","260303":"บ้านพริก","260304":"อาษา","260305":"ทองหลาง","260306":"บางอ้อ","260307":"พิกุลออก","260308":"ป่าขะ","260309":"เขาเพิ่ม","260310":"ศรีกะอาง","260401":"พระอาจารย์","260402":"บึงศาล","260403":"ศีรษะกระบือ","260404":"โพธิ์แทน","260405":"บางสมบูรณ์","260406":"ทรายมูล","260407":"บางปลากด","260408":"บางลูกเสือ","260409":"องครักษ์","260410":"ชุมพล","260411":"คลองใหญ่"};
+  const ICD={"R99":"สาเหตุไม่ชัดแจ้ง/ไม่ระบุ","R54":"ชราภาพ","R55":"หมดสติ/เป็นลม","R57":"ภาวะช็อก","R09":"อาการระบบหายใจอื่น","R69":"ไม่ทราบสาเหตุการป่วย","I50":"หัวใจล้มเหลว","I46":"หัวใจหยุดเต้น","I10":"ความดันโลหิตสูง","I21":"กล้ามเนื้อหัวใจตายเฉียบพลัน","I23":"ภาวะแทรกซ้อนหลังกล้ามเนื้อหัวใจตาย","I24":"หัวใจขาดเลือดเฉียบพลันอื่น","I25":"หัวใจขาดเลือดเรื้อรัง","I49":"หัวใจเต้นผิดจังหวะ","I48":"หัวใจห้องบนสั่นพลิ้ว","I51":"โรคหัวใจอื่น","I11":"โรคหัวใจจากความดันสูง","I60":"เลือดออกใต้เยื่อหุ้มสมอง","I61":"เลือดออกในสมอง","I62":"เลือดออกในกะโหลกอื่น","I63":"สมองขาดเลือด","I64":"โรคหลอดเลือดสมอง ไม่ระบุ","I67":"โรคหลอดเลือดสมองอื่น","I69":"ผลตามหลังโรคหลอดเลือดสมอง","I74":"หลอดเลือดแดงอุดตัน","I70":"หลอดเลือดแดงแข็ง","J96":"ระบบหายใจล้มเหลว","J85":"ฝีในปอด/ช่องอก","J18":"ปอดอักเสบ","J15":"ปอดอักเสบจากแบคทีเรีย","J12":"ปอดอักเสบจากไวรัส","J22":"ติดเชื้อทางเดินหายใจส่วนล่าง","J44":"ปอดอุดกั้นเรื้อรัง (COPD)","J43":"ถุงลมโป่งพอง","J39":"โรคทางเดินหายใจส่วนบนอื่น","J66":"โรคทางเดินหายใจจากฝุ่นอินทรีย์","J45":"หืด","A41":"ติดเชื้อในกระแสเลือด","A48":"ติดเชื้อแบคทีเรียอื่น","A15":"วัณโรคปอด","A16":"วัณโรคปอด","B99":"โรคติดเชื้ออื่น ไม่ระบุ","B24":"เอชไอวี","B20":"เอชไอวี","E11":"เบาหวานชนิดที่ 2","E14":"เบาหวาน ไม่ระบุ","N18":"ไตวายเรื้อรัง","N17":"ไตวายเฉียบพลัน","N19":"ไตวาย ไม่ระบุ","N39":"ติดเชื้อทางเดินปัสสาวะ","C34":"มะเร็งปอด","C22":"มะเร็งตับ","C18":"มะเร็งลำไส้ใหญ่","C20":"มะเร็งลำไส้ตรง","C50":"มะเร็งเต้านม","C53":"มะเร็งปากมดลูก","C61":"มะเร็งต่อมลูกหมาก","C67":"มะเร็งกระเพาะปัสสาวะ","C76":"มะเร็งตำแหน่งไม่ชัด","C77":"มะเร็งแพร่กระจายต่อมน้ำเหลือง","C25":"มะเร็งตับอ่อน","D00":"มะเร็งระยะเริ่มต้น ช่องปาก/ทางเดินอาหาร","D09":"มะเร็งระยะเริ่มต้น อื่น","D05":"มะเร็งระยะเริ่มต้น เต้านม","O85":"ติดเชื้อหลังคลอด","K74":"ตับแข็ง","K70":"โรคตับจากแอลกอฮอล์","L89":"แผลกดทับ","G31":"สมองเสื่อม","G46":"กลุ่มอาการหลอดเลือดสมอง","V23":"อุบัติเหตุจักรยานยนต์ชนรถยนต์","V43":"อุบัติเหตุรถยนต์ชนรถยนต์","W70":"จมน้ำ","W69":"จมน้ำ","X70":"ทำร้ายตนเองโดยการแขวนคอ","Y86":"ผลตามหลังอุบัติเหตุ"};
+  const HLOC={"10698":["เมืองนครนายก","นครนายก"],"10863":["ปากพลี","เกาะหวาย"],"10864":["บ้านนา","บ้านนา"],"10865":["องครักษ์","องครักษ์"],"11491":["เมืองนครนายก","พรหมณี"],"14904":["องครักษ์","องครักษ์"],"99842":["องครักษ์","คลองใหญ่"],"02394":["เมืองนครนายก","สาริกา"]};
+  const G={"1":"อหิวาตกโรค","2":"ไข้ไทฟอยด์และพาราไทฟอยด์","3":"โรคบิดชิเกลลา","4":"โรคบิดอะมีบา","5":"อุจจาระร่วงและกระเพาะลำไส้อักเสบที่สันนิษฐานว่าเกิดจากการติดเชื้อ","6":"โรคติดเชื้ออื่น ๆ ของลำไส้","7":"วัณโรคระบบทางเดินหายใจ","8":"วัณโรคอื่น ๆ","9":"กาฬโรค","10":"โรคบรูเซลลา","11":"โรคเรื้อน","12":"บาดทะยักในทารกแรกเกิด","13":"บาดทะยักอื่น ๆ","14":"คอตีบ","15":"ไอกรน","16":"การติดเชื้อมีนิงโกคอคคัส","17":"ภาวะโลหิตเป็นพิษ","18":"โรคติดเชื้อแบคทีเรียอื่น ๆ","19":"ซิฟิลิสแต่กำเนิด","20":"ซิฟิลิสระยะแรก","21":"ซิฟิลิสอื่น ๆ","22":"หนองใน","23":"โรคติดเชื้อคลามัยเดียทางเพศสัมพันธ์","24":"โรคติดเชื้ออื่น ๆ ที่ติดต่อทางเพศสัมพันธ์เป็นส่วนใหญ่","25":"ไข้กลับซ้ำ","26":"ริดสีดวงตา","27":"ไข้รากสาดใหญ่","28":"โปลิโอเฉียบพลัน","29":"โรคพิษสุนัขบ้า","30":"สมองอักเสบจากไวรัส","31":"ไข้เหลือง","32":"ไข้จากไวรัสที่มีแมลงเป็นพาหะอื่น ๆ และไข้เลือดออกจากไวรัส","33":"การติดเชื้อไวรัสเริม","34":"อีสุกอีใสและงูสวัด","35":"หัด","36":"หัดเยอรมัน","37":"ตับอักเสบบีเฉียบพลัน","38":"ตับอักเสบจากไวรัสอื่น ๆ","39":"โรคติดเชื้อเอชไอวี","40":"คางทูม","41":"โรคติดเชื้อไวรัสอื่น ๆ","42":"โรคติดเชื้อรา","43":"มาลาเรีย","44":"ลิชมาเนีย","45":"ทริปาโนโซมา","46":"พยาธิใบไม้ในเลือด","47":"พยาธิใบไม้อื่น ๆ","48":"โรคพยาธิตัวตืดเอคไคโนคอคคัส","49":"โรคพยาธิดราคันคูลัส","50":"โรคพยาธิออนโคเซอร์คา","51":"โรคเท้าช้าง","52":"โรคพยาธิปากขอ","53":"โรคพยาธิอื่น ๆ","54":"ผลที่ตามมาของวัณโรค","55":"ผลที่ตามมาของโปลิโอ","56":"ผลที่ตามมาของโรคเรื้อน","57":"โรคติดเชื้อและปรสิตอื่น ๆ","58":"มะเร็งริมฝีปาก ช่องปาก และคอหอย","59":"มะเร็งหลอดอาหาร","60":"มะเร็งกระเพาะอาหาร","61":"มะเร็งลำไส้ใหญ่","62":"มะเร็งรอยต่อลำไส้ใหญ่ส่วนซิกมอยด์ ไส้ตรง ทวารหนัก","63":"มะเร็งตับและท่อน้ำดีในตับ","64":"มะเร็งตับอ่อน","65":"มะเร็งอื่น ๆ ของอวัยวะย่อยอาหาร","66":"มะเร็งกล่องเสียง","67":"มะเร็งหลอดลมและปอด","68":"มะเร็งอื่น ๆ ของระบบหายใจและอวัยวะในทรวงอก","69":"มะเร็งกระดูกและกระดูกอ่อนข้อต่อ","70":"มะเร็งผิวหนังชนิดเมลาโนมา","71":"มะเร็งผิวหนังอื่น ๆ","72":"มะเร็งเนื้อเยื่อเมโซทีเลียมและเนื้อเยื่ออ่อน","73":"มะเร็งเต้านม","74":"มะเร็งปากมดลูก","75":"มะเร็งมดลูกส่วนอื่น ๆ และไม่ระบุส่วน","76":"มะเร็งอื่น ๆ ของอวัยวะสืบพันธุ์สตรี","77":"มะเร็งต่อมลูกหมาก","78":"มะเร็งอื่น ๆ ของอวัยวะสืบพันธุ์ชาย","79":"มะเร็งกระเพาะปัสสาวะ","80":"มะเร็งอื่น ๆ ของทางเดินปัสสาวะ","81":"มะเร็งตาและส่วนประกอบของตา","82":"มะเร็งสมอง","83":"มะเร็งส่วนอื่น ๆ ของระบบประสาทส่วนกลาง","84":"มะเร็งตำแหน่งอื่น ๆ ไม่ชัดเจน ทุติยภูมิ ไม่ระบุ และหลายตำแหน่ง","85":"โรคฮอดจ์กิน","86":"มะเร็งต่อมน้ำเหลืองชนิดนอนฮอดจ์กิน","87":"มะเร็งเม็ดเลือดขาว","88":"มะเร็งอื่น ๆ ของเนื้อเยื่อน้ำเหลือง เนื้อเยื่อสร้างเม็ดเลือด","89":"มะเร็งปากมดลูกระยะก่อนลุกลาม","90":"เนื้องอกไม่ร้ายของผิวหนัง","91":"เนื้องอกไม่ร้ายของเต้านม","92":"เนื้องอกกล้ามเนื้อมดลูก","93":"เนื้องอกไม่ร้ายของรังไข่","94":"เนื้องอกไม่ร้ายของอวัยวะทางเดินปัสสาวะ","95":"เนื้องอกไม่ร้ายของสมองและระบบประสาทส่วนกลาง","96":"เนื้องอกระยะก่อนลุกลาม เนื้องอกไม่ร้ายอื่น ๆ และเนื้องอกที่ไม่แน่ชัด","97":"โลหิตจางจากการขาดธาตุเหล็ก","98":"โลหิตจางอื่น ๆ","99":"ภาวะเลือดออกง่ายและโรคอื่น ๆ ของเลือดและอวัยวะสร้างเลือด","100":"ความผิดปกติบางอย่างของระบบภูมิคุ้มกัน","101":"ความผิดปกติของต่อมไทรอยด์จากการขาดไอโอดีน","102":"ภาวะต่อมไทรอยด์เป็นพิษ","103":"ความผิดปกติอื่น ๆ ของต่อมไทรอยด์","104":"เบาหวาน","105":"ภาวะทุพโภชนาการ","106":"การขาดวิตามินเอ","107":"การขาดวิตามินอื่น ๆ","108":"ผลที่ตามมาของภาวะทุพโภชนาการและการขาดสารอาหารอื่น ๆ","109":"โรคอ้วน","110":"ภาวะขาดน้ำ","111":"ความผิดปกติของต่อมไร้ท่อ โภชนาการและเมตะบอลิกอื่น ๆ","112":"ภาวะสมองเสื่อม","113":"ความผิดปกติทางจิตและพฤติกรรมจากการใช้สุรา","114":"ความผิดปกติทางจิตและพฤติกรรมจากการใช้สารออกฤทธิ์ต่อจิตประสาทอื่น ๆ","115":"โรคจิตเภท ความผิดปกติแบบจิตเภท และโรคหลงผิด","116":"ความผิดปกติทางอารมณ์","117":"โรคประสาท ความผิดปกติสัมพันธ์กับความเครียด และอาการทางกายที่มีสาเหตุจากจิตใจ","118":"ภาวะปัญญาอ่อน","119":"ความผิดปกติทางจิตและพฤติกรรมอื่น ๆ","120":"โรคอักเสบของระบบประสาทส่วนกลาง","121":"โรคพาร์กินสัน","122":"โรคอัลไซเมอร์","123":"โรคปลอกประสาทเสื่อมแข็ง","124":"โรคลมชัก","125":"ไมเกรนและกลุ่มอาการปวดศีรษะอื่น ๆ","126":"ภาวะสมองขาดเลือดชั่วคราวและกลุ่มอาการที่เกี่ยวข้อง","127":"ความผิดปกติของเส้นประสาท รากประสาท และร่างแหประสาท","128":"สมองพิการและกลุ่มอาการอัมพาตอื่น ๆ","129":"โรคอื่น ๆ ของระบบประสาท","130":"การอักเสบของหนังตา","131":"เยื่อบุตาอักเสบและความผิดปกติอื่น ๆ ของเยื่อบุตา","132":"กระจกตาอักเสบและความผิดปกติอื่น ๆ ของตาขาวและกระจกตา","133":"ต้อกระจกและความผิดปกติของเลนส์อื่น ๆ","134":"จอประสาทตาลอกและฉีกขาด","135":"ต้อหิน","136":"ตาเหล่","137":"ความผิดปกติของการหักเหแสงและการปรับสายตา","138":"ตาบอดและสายตาเลือนราง","139":"โรคอื่น ๆ ของตาและส่วนประกอบของตา","140":"หูชั้นกลางอักเสบและความผิดปกติอื่น ๆ ของหูชั้นกลางและกกหู","141":"การสูญเสียการได้ยิน","142":"โรคอื่น ๆ ของหูและกกหู","143":"ไข้รูมาติกเฉียบพลัน","144":"โรคหัวใจรูมาติกเรื้อรัง","145":"ความดันโลหิตสูงที่ไม่มีสาเหตุนำ","146":"โรคความดันโลหิตสูงอื่น ๆ","147":"กล้ามเนื้อหัวใจตายเฉียบพลัน","148":"โรคหัวใจขาดเลือดอื่น ๆ","149":"หลอดเลือดแดงปอดอุดตัน","150":"ความผิดปกติของการนำไฟฟ้าหัวใจและหัวใจเต้นผิดจังหวะ","151":"หัวใจล้มเหลว","152":"โรคหัวใจอื่น ๆ","153":"เลือดออกในกะโหลกศีรษะ","154":"เนื้อสมองตาย","155":"อัมพาตเฉียบพลันที่ไม่ระบุว่าเลือดออกหรือเนื้อสมองตาย","156":"โรคหลอดเลือดสมองอื่น ๆ","157":"หลอดเลือดแดงแข็ง","158":"โรคหลอดเลือดส่วนปลายอื่น ๆ","159":"หลอดเลือดแดงอุดตันจากลิ่มเลือด","160":"โรคอื่น ๆ ของหลอดเลือดแดง หลอดเลือดแดงเล็ก และหลอดเลือดฝอย","161":"หลอดเลือดดำอักเสบและอุดตัน","162":"หลอดเลือดดำขอดที่ขา","163":"ริดสีดวงทวาร","164":"โรคอื่น ๆ ของระบบไหลเวียนเลือด","165":"คออักเสบเฉียบพลันและทอนซิลอักเสบเฉียบพลัน","166":"กล่องเสียงและหลอดลมอักเสบเฉียบพลัน","167":"การติดเชื้อของทางเดินหายใจส่วนบนแบบเฉียบพลันอื่น ๆ","168":"ไข้หวัดใหญ่","169":"ปอดบวม","170":"หลอดลมอักเสบและหลอดลมฝอยอักเสบเฉียบพลัน","171":"ไซนัสอักเสบเรื้อรัง","172":"โรคอื่น ๆ ของจมูกและโพรงอากาศข้างจมูก","173":"โรคเรื้อรังของต่อมทอนซิลและต่อมอะดีนอยด์","174":"โรคอื่น ๆ ของทางเดินหายใจส่วนบน","175":"โรคหลอดลมอักเสบ ถุงลมโป่งพองและปอดชนิดอุดกั้นแบบเรื้อรังอื่น","176":"โรคหืด","177":"หลอดลมพอง","178":"โรคปอดจากฝุ่น","179":"โรคอื่น ๆ ของระบบหายใจ","180":"ฟันผุ","181":"ความผิดปกติอื่น ๆ ของฟันและโครงสร้าง","182":"โรคอื่น ๆ ของช่องปาก ต่อมน้ำลาย และขากรรไกร","183":"แผลในกระเพาะอาหารและลำไส้เล็กส่วนต้น","184":"กระเพาะอาหารและลำไส้เล็กส่วนต้นอักเสบ","185":"โรคอื่น ๆ ของหลอดอาหาร กระเพาะและดูโอเดนัม","186":"โรคของไส้ติ่ง","187":"ไส้เลื่อนขาหนีบ","188":"ไส้เลื่อนอื่น ๆ","189":"โรคโครห์นและลำไส้ใหญ่อักเสบเป็นแผล","190":"ลำไส้อืดและลำไส้อุดตันโดยไม่มีไส้เลื่อน","191":"โรคถุงผนังลำไส้","192":"โรคอื่น ๆ ของลำไส้และเยื่อบุช่องท้อง","193":"โรคตับจากแอลกอฮอล์","194":"โรคอื่น ๆ ของตับ","195":"นิ่วในถุงน้ำดีและถุงน้ำดีอักเสบ","196":"ตับอ่อนอักเสบเฉียบพลันและโรคอื่น ๆ ของตับอ่อน","197":"โรคอื่น ๆ ของระบบย่อยอาหาร","198":"การติดเชื้อของผิวหนังและเนื้อเยื่อใต้ผิวหนัง","199":"โรคอื่น ๆ ของผิวหนังและเนื้อเยื่อใต้ผิวหนัง","200":"ข้ออักเสบรูมาตอยด์และข้ออักเสบหลายข้ออื่น ๆ","201":"โรคข้อเสื่อม","202":"ความผิดรูปของแขนขาที่เกิดภายหลัง","203":"ความผิดปกติอื่น ๆ ของข้อ","204":"โรคของเนื้อเยื่อเกี่ยวพันทั่วร่างกาย","205":"ความผิดปกติของหมอนรองกระดูกคอและหมอนรองกระดูกสันหลังอื่น ๆ","206":"พยาธิสภาพของหลังส่วนอื่น ๆ","207":"เนื้อเยื่อผิดปกติ","208":"ความผิดปกติของความหนาแน่นและโครงสร้างกระดูก","209":"กระดูกอักเสบติดเชื้อ","210":"โรคอื่น ๆ ของระบบกล้ามเนื้อ โครงร่าง และเนื้อเยื่อเกี่ยวพัน","211":"กลุ่มอาการไตอักเสบเฉียบพลันและลุกลามเร็ว","212":"โรคโกลเมอรูลัสอื่น ๆ","213":"โรคของท่อไตและเนื้อเยื่อไต","214":"ไตวาย","215":"นิ่วในทางเดินปัสสาวะ","216":"กระเพาะปัสสาวะอักเสบ","217":"โรคอื่น ๆ ของระบบทางเดินปัสสาวะ","218":"ต่อมลูกหมากโตจากการเพิ่มจำนวนเซล","219":"ความผิดปกติอื่น ๆ ของต่อมลูกหมาก","220":"ถุงน้ำรอบอัณฑะและถุงน้ำอสุจิ","221":"หนังหุ้มปลายองคชาตยาว ตีบ และรัด","222":"โรคอื่น ๆ ของอวัยวะสืบพันธุ์ชาย","223":"ความผิดปกติของเต้านม","224":"ท่อนำไข่และรังไข่อักเสบ","225":"ปากมดลูกอักเสบ","226":"โรคอักเสบอื่น ๆ ของอวัยวะในอุ้งเชิงกรานสตรี","227":"เยื่อบุโพรงมดลูกเจริญผิดที่","228":"อวัยวะสืบพันธุ์สตรีหย่อน","229":"ความผิดปกติที่ไม่ใช่การอักเสบของรังไข่ ท่อนำไข่ และเอ็นยึดมดลูก","230":"ความผิดปกติของประจำเดือน","231":"ภาวะหมดประจำเดือนและความผิดปกติในช่วงใกล้หมดประจำเดือน","232":"ภาวะมีบุตรยากในสตรี","233":"ความผิดปกติอื่น ๆ ของระบบสืบพันธุ์และทางเดินปัสสาวะ","234":"การแท้งเอง","235":"การแท้งด้วยเหตุผลทางการแพทย์","236":"การตั้งครรภ์อื่น ๆ ที่สิ้นสุดด้วยการแท้ง","237":"ภาวะบวม โปรตีนในปัสสาวะ และความดันโลหิตสูงในการตั้งครรภ์ การคลอด และระยะหลังคลอด","238":"รกเกาะต่ำ รกลอกตัวก่อนกำหนด และเลือดออกก่อนคลอด","239":"การดูแลมารดาอื่น ๆ ที่มีปัญหาเกี่ยวกับทารกในครรภ์ และถุงน้ำคร่ำ และปัญหาที่อาจจะเกิดได้ในระยะคลอด","240":"การคลอดติดขัด","241":"การตกเลือดหลังคลอด","242":"ภาวะแทรกซ้อนอื่น ๆของการตั้งครรภ์ และการคลอด","243":"การคลอดเดี่ยวปกติ","244":"ภาวะแทรกซ้อนในระยะหลังคลอดและภาวะทางสูติกรรมอื่น ๆ","245":"ทารกได้รับผลจากภาวะของมารดาและภาวะแทรกซ้อนของการตั้งครรภ์และการคลอด","246":"ทารกโตช้าในครรภ์ ขาดอาหาร คลอดก่อนกำหนด และน้ำหนักแรกคลอดน้อย","247":"การบาดเจ็บจากการคลอด","248":"ภาวะขาดออกซิเจนในครรภ์และภาวะขาดออกซิเจนแรกคลอด","249":"ความผิดปกติอื่น ๆ ของระบบหายใจในระยะปริกำเนิด","250":"โรคติดเชื้อและปรสิตแต่กำเนิด","251":"การติดเชื้ออื่น ๆ เฉพาะระยะปริกำเนิด","252":"โรคเม็ดเลือดแดงแตกในทารกในครรภ์และทารกแรกเกิด","253":"ภาวะอื่น ๆ ที่เกิดในระยะปริกำเนิด","254":"กระดูกสันหลังโหว่","255":"ความพิการแต่กำเนิดอื่น ๆ ของระบบประสาท","256":"ความพิการแต่กำเนิดของระบบไหลเวียนเลือด","257":"ปากแหว่งเพดานโหว่","258":"ลำไส้เล็กไม่มี ตัน หรือตีบแต่กำเนิด","259":"ความพิการแต่กำเนิดอื่น ๆ ของระบบย่อยอาหาร","260":"อัณฑะไม่ลงถุง","261":"ความพิการแต่กำเนิดอื่น ๆ ของระบบสืบพันธุ์และทางเดินปัสสาวะ","262":"ข้อสะโพกผิดรูปแต่กำเนิด","263":"เท้าผิดรูปแต่กำเนิด","264":"ความพิการและผิดรูปแต่กำเนิดอื่น ๆ ของระบบกล้ามเนื้อและกระดูก","265":"ความพิการแต่กำเนิดอื่น ๆ","266":"ความผิดปกติของโครโมโซม","267":"ปวดท้องและปวดอุ้งเชิงกราน","268":"ไข้ไม่ทราบสาเหตุ","269":"ความชรา","270":"อาการ อาการแสดง และผลตรวจผิดปกติอื่น ๆ ที่ไม่ได้จำแนกไว้ที่อื่น","271":"กระดูกกะโหลกศีรษะและกระดูกใบหน้าหัก","272":"กระดูกคอ ทรวงอก หรือเชิงกรานหัก","273":"กระดูกต้นขาหัก","274":"กระดูกแขนขาส่วนอื่นหัก","275":"กระดูกหักหลายบริเวณ","276":"ข้อเคลื่อน ข้อแพลง และกล้ามเนื้อฉีก","277":"การบาดเจ็บของตาและเบ้าตา","278":"การบาดเจ็บภายในกะโหลกศีรษะ","279":"การบาดเจ็บของอวัยวะภายในอื่น ๆ","280":"การบาดเจ็บจากการถูกบดทับและการถูกตัดขาดของอวัยวะ","281":"การบาดเจ็บระบุเฉพาะอื่น ๆ , ไม่ระบุเฉพาะและหลายบริเวณในร่างกาย","282":"ผลจากสิ่งแปลกปลอมเข้าทางช่องเปิดตามธรรมชาติ","283":"แผลไหม้และแผลจากสารกัดกร่อน","284":"พิษจากยาและสารชีวภาพ","285":"พิษจากสารที่ไม่ใช่ยา","286":"กลุ่มอาการจากการถูกทำร้าย","287":"ผลอื่น ๆ และไม่ระบุจากสาเหตุภายนอก","288":"ภาวะแทรกซ้อนระยะแรกของการบาดเจ็บ และภาวะแทรกซ้อนจากการรักษาทางศัลยกรรมและอายุรกรรม","289":"ผลที่ตามมาของการบาดเจ็บ การเป็นพิษ และสาเหตุภายนอกอื่น ๆ","290":"ผู้มารับบริการเพื่อตรวจและสืบค้น","291":"ผู้ติดเชื้อเอชไอวีที่ไม่มีอาการ","292":"ผู้มีความเสี่ยงต่อสุขภาพเกี่ยวกับโรคติดต่ออื่น ๆ","293":"การคุมกำเนิด","294":"การตรวจคัดกรองก่อนคลอดและการดูแลการตั้งครรภ์อื่น ๆ","295":"ทารกเกิดมีชีพจำแนกตามสถานที่เกิด","296":"การดูแลและตรวจหลังคลอด","297":"ผู้มารับบริการเพื่อหัตถการและการดูแลสุขภาพเฉพาะ","298":"ผู้มารับบริการด้วยเหตุผลอื่น"};
+  
+  const API='https://opendata.moph.go.th/api/report_data', PROV='26', AGE_YEARS=[2567,2568];
+  const D2={'01':'เมืองนครนายก','02':'ปากพลี','03':'บ้านนา','04':'องครักษ์'};
+  const TAMB2AMP={};Object.entries(TAMB).forEach(([c,n])=>{TAMB2AMP[n]=D2[c.slice(2,4)];});
+  const fmt=n=>(n==null||!isFinite(n))?'—':Math.round(n).toLocaleString('th-TH');
+  const fmtP=n=>(n==null||!isFinite(n))?'—':(Math.round(n*10)/10).toLocaleString('th-TH',{minimumFractionDigits:1,maximumFractionDigits:1})+'%';
+  const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+  // Open Data จำกัดความถี่: ยิงพร้อมกันไม่เกิน 2 คำขอ, ลองใหม่แบบ backoff, หมดเวลา 30 วินาที
+  let active=0;const waitQ=[];
+  async function slot(fn){if(active>=2)await new Promise(r=>waitQ.push(r));active++;try{return await fn();}finally{active--;const n=waitQ.shift();if(n)n();}}
+  async function postJSON(body){
+    for(let a=0;;a++){
+      const ctl=new AbortController();const t=setTimeout(()=>ctl.abort(),30000);
+      let r;try{r=await slot(()=>fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body),signal:ctl.signal,credentials:'omit',referrerPolicy:'no-referrer'}));}
+      finally{clearTimeout(t);}
+      if((r.status===429||r.status>=500)&&a<5){await sleep(Math.min(20000,1500*2**a));continue;}
+      if(!r.ok)throw new Error('HTTP '+r.status);
+      const j=await r.json();if(!j||typeof j!=='object')throw new Error('รูปแบบข้อมูลไม่ถูกต้อง');return j;
+    }
+  }
+  const TTL=30*60*1000;
+  function cget(k){try{const o=JSON.parse(localStorage.getItem(k)||'null');if(o&&typeof o.t==='number'&&Date.now()-o.t<TTL&&Array.isArray(o.d))return o.d;}catch(e){}return null;}
+  function cset(k,d){try{localStorage.setItem(k,JSON.stringify({t:Date.now(),d}));}catch(e){}}
+  async function fetchAll(table,year,map,ckey){
+    const hit=cget(ckey);if(hit)return hit;
+    const out=[];let off=0;const limit=5000;
+    for(let i=0;i<40;i++){
+      const j=await postJSON({tableName:table,year:String(year),province:PROV,type:'json',limit,offset:off});
+      const d=Array.isArray(j.data)?j.data:[];for(const x of d){const m=map(x);if(m)out.push(m);}
+      off+=d.length;const tot=+j.total||0;if(!d.length||(tot&&off>=tot)||(!tot&&d.length<limit))break;
+    }
+    cset(ckey,out);return out;
+  }
+  const num=v=>{const n=+v;return isFinite(n)?n:0;};
+  const str=(v,max)=>String(v==null?'':v).slice(0,max||20);
+  // แปลงแถวให้เหมือนแดชบอร์ดย่อย (disease ใช้คีย์แคชเดียวกับ disease-noph จึงใช้แคชร่วมกันได้)
+  const mapPop=x=>({a:str(x.areacode).trim().slice(2,4),b1:num(x.type1),b3:num(x.type3),c1:num(x.type1c),c2:num(x.type2c),c3:num(x.type3c)});
+  const mapDis=x=>({h:x.hospcode,a:String(x.areacode||'').slice(0,4),s:String(x.sex),g:+x.groupcode298,n:+x.result||0,dc:x.date_com||''});
+  const mapDeath=x=>({a:str(x.areacode).trim().replace(/,+$/,''),h:str(x.hospcode),d:str(x.diagcode,12).toUpperCase().replace(/[^A-Z0-9]/g,'').slice(0,3),s:String(x.sex)==='1'?'m':'f',n:num(x.result)});
+  const mem={};
+  const once=(k,fn)=>mem[k]||(mem[k]=fn().catch(e=>{delete mem[k];throw e;}));
+  const getPop=y=>once('pop'+y,()=>fetchAll('s_persontype',y,mapPop,'nykhome:v1:s_persontype:'+y));
+  const getDis=y=>once('dis'+y,()=>fetchAll('s_opd10_sex',y,mapDis,'nyk:v3:s_opd10_sex:'+y));
+  const getAge=y=>once('age'+y,()=>fetchAll('s_opd10_sex15',y,mapDis,'nyk:v3:s_opd10_sex15:'+y));
+  // การตาย: โหลด 3 ปีเหมือนแดชบอร์ดการตาย เพื่อระบุอำเภอที่ตั้งหน่วยบริการด้วยวิธีเดียวกัน
+  const getDeath=()=>once('death',async()=>{
+    const rows=[];for(const y of YEARS){(await fetchAll('s_death_diag_sex_age',y,mapDeath,'nykhome:v1:s_death:'+y)).forEach(r=>rows.push({...r,y}));}
+    rows.forEach(r=>{const a=r.a;
+      if(/^26\d{6}$/.test(a)){r.amp=D2[a.slice(2,4)]||'';r.tb=TAMB[a.slice(0,6)]||'';}
+      else if(a.startsWith('26')&&D2[a.slice(2,4)]){r.amp=D2[a.slice(2,4)];r.tb='เขตเทศบาล/ชุมชน';}
+      else{r.amp='';r.tb='';}});
+    const cnt={};rows.forEach(r=>{if(!r.amp||r.tb==='เขตเทศบาล/ชุมชน')return;const k=r.amp+'|'+r.tb;(cnt[r.h]=cnt[r.h]||{})[k]=(cnt[r.h][k]||0)+r.n;});
+    const loc={};[...new Set(rows.map(r=>r.h))].forEach(h=>{
+      if(HLOC[h]){loc[h]=HLOC[h][0];return;}
+      const m=(HOS[h]||'').match(/ ต\.(\S+)/);if(m&&TAMB2AMP[m[1]]){loc[h]=TAMB2AMP[m[1]];return;}
+      const top=Object.entries(cnt[h]||{}).sort((a,b)=>b[1]-a[1])[0];loc[h]=top?top[0].split('|')[0]:'';});
+    rows.forEach(r=>{r.ha=loc[r.h]||'';});
+    return rows;
+  });
+
+  /* ---- แสดงผล ---- */
+  const setK=(k,t,cls)=>document.querySelectorAll('[data-k="'+k+'"]').forEach(e=>{e.textContent=t;e.classList.toggle('ld',cls==='ld');if(cls&&cls!=='ld')e.title=cls;else e.removeAttribute('title');});
+  const RM=()=>matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function countTo(k,val,f){document.querySelectorAll('.kpi [data-k="'+k+'"]').forEach(e=>{
+    if(RM()||val==null||!isFinite(val)){e.textContent=f(val);return;}
+    const t0=performance.now(),d=900;const step=now=>{const p=Math.min(1,(now-t0)/d),q=1-Math.pow(1-p,3);e.textContent=f(val*q);if(p<1)requestAnimationFrame(step);};requestAnimationFrame(step);});}
+  const KEYS={pop:['pop_area','pop_registered_absent','pop_duplicate','d2601_pop','d2602_pop','d2603_pop','d2604_pop','p_pop'],
+    dis:['visit_total','disease_top1','d2601_visit','d2602_visit','d2603_visit','d2604_visit','p_visit'],age:['visit_age_le15'],
+    death:['death_total','death_ill_defined_pct','death_top1','death_sex_ratio','d2601_death','d2602_death','d2603_death','d2604_death','p_death','d2601_rpct','d2602_rpct','d2603_rpct','d2604_rpct','p_rpct']};
+  const DCODES=['2601','2602','2603','2604'];
+  const dn=c=>D2[c.slice(2,4)];
+  const state={ok:{},err:{},at:null};
+  function badge(){
+    const b=$('apiBadge'),dot=$('apiDot'),t=$('apiTxt');const errs=Object.keys(state.err).length,pend=['pop','dis','death'].some(k=>!state.ok[k]&&!state.err[k]);
+    b.classList.toggle('err',errs>0);dot.className='dot'+(errs?' err':pend?' load':'');
+    const now=state.at||new Date();const pad=n=>String(n).padStart(2,'0');
+    const ts=now.getDate()+' '+['ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.'][now.getMonth()]+' '+(now.getFullYear()+543)+' · '+pad(now.getHours())+':'+pad(now.getMinutes())+' น.';
+    t.textContent=errs?'เชื่อมต่อ API ไม่สำเร็จบางส่วน · แตะเพื่อลองใหม่':pend?'กำลังเชื่อมต่อ API…':'เชื่อมต่อ API ล่าสุด '+ts;
+    b.setAttribute('aria-label',t.textContent);
+    b.title=errs?'ส่วนที่ไม่สำเร็จ: '+Object.keys(state.err).map(k=>({pop:'ประชากร',dis:'การป่วย',age:'กลุ่มอายุ',death:'การตาย'})[k]).join(', '):'โหลดข้อมูลใหม่';
+  }
+  let token=0;
+  async function update(){
+    const my=++token;const sel=NYK.selected();const y=sel.year,dist=sel.district;
+    const inD=c=>dist==='all'||c===dist;
+    $('s_pop').textContent='TYPEAREA 1+3 หลัง cleansing · ปีงบ '+y;
+    $('s_visit').textContent='ครั้ง ผู้ป่วยนอก · ปีงบ '+y;
+    $('s_death').textContent='ราย · ปีงบ '+y;
+    $('s_ill').textContent='รหัส R00–R99 ต่อการตายทั้งหมด · ปีงบ '+y;
+    Object.values(KEYS).flat().forEach(k=>setK(k,'…','ld'));
+    const fail=(k,e)=>{if(my!==token)return;console.warn(k,e);state.err[k]=String(e&&e.message||e);KEYS[k].forEach(x=>setK(x,'—','ดึงข้อมูลไม่สำเร็จ'));badge();};
+    const done=k=>{delete state.err[k];state.ok[k]=1;state.at=new Date();badge();};
+    badge();
+
+    getPop(y).then(rows=>{if(my!==token)return;done('pop');
+      if(!rows.length){KEYS.pop.forEach(x=>setK(x,'—','ยังไม่มีข้อมูลปีงบนี้'));return;}
+      const by={};let all13=0;rows.forEach(r=>{const o=by[r.a]||(by[r.a]={c13:0,c2:0,b13:0});o.c13+=r.c1+r.c3;o.c2+=r.c2;o.b13+=r.b1+r.b3;all13+=r.c1+r.c3;});
+      const pick=dist==='all'?Object.values(by):[by[dist.slice(2,4)]||{c13:0,c2:0,b13:0}];
+      const c13=pick.reduce((a,o)=>a+o.c13,0),c2=pick.reduce((a,o)=>a+o.c2,0),b13=pick.reduce((a,o)=>a+o.b13,0);
+      setK('pop_area',fmt(c13));setK('pop_registered_absent',fmt(c2));
+      setK('pop_duplicate',fmt(b13-c13)+(b13?' ('+fmtP((b13-c13)/b13*100)+')':''));
+      DCODES.forEach(c=>setK('d'+c+'_pop',fmt((by[c.slice(2,4)]||{}).c13||0)));setK('p_pop',fmt(all13));
+      countTo('pop_area',c13,fmt);
+    }).catch(e=>fail('pop',e));
+
+    getDis(y).then(rows=>{if(my!==token)return;done('dis');
+      if(!rows.length){KEYS.dis.forEach(x=>setK(x,'—','ยังไม่มีข้อมูลปีงบนี้'));return;}
+      const byD={};let all=0;const g={};rows.forEach(x=>{byD[x.a]=(byD[x.a]||0)+x.n;all+=x.n;if(inD(x.a))g[x.g]=(g[x.g]||0)+x.n;});
+      const tot=dist==='all'?all:(byD[dist]||0);
+      const top=Object.entries(g).sort((a,b)=>b[1]-a[1])[0];
+      setK('visit_total',fmt(tot));countTo('visit_total',tot,fmt);
+      setK('disease_top1',top?(G[top[0]]||('กลุ่มโรครหัส '+top[0])):'—');
+      document.querySelectorAll('[data-k="disease_top1"]').forEach(e=>{if(top)e.title=(G[top[0]]||'')+' · '+fmt(top[1])+' ครั้ง';});
+      DCODES.forEach(c=>setK('d'+c+'_visit',fmt(byD[c]||0)));setK('p_visit',fmt(all));
+    }).catch(e=>fail('dis',e));
+
+    if(AGE_YEARS.includes(y)){
+      getAge(y).then(rows=>{if(my!==token)return;done('age');
+        const t=rows.filter(x=>inD(x.a)).reduce((a,x)=>a+x.n,0);
+        setK('visit_age_le15',rows.length?fmt(t)+(y===2568?'*':''):'—');
+      }).catch(e=>fail('age',e));
+    }else{delete state.err.age;setK('visit_age_le15','—','ไม่มีข้อมูลกลุ่มอายุของปีงบนี้ (มีถึง ธ.ค. 2567)');}
+
+    getDeath().then(all=>{if(my!==token)return;done('death');
+      const rows=all.filter(r=>r.y===y);
+      if(!rows.length){KEYS.death.forEach(x=>setK(x,'—','ยังไม่มีข้อมูลปีงบนี้'));return;}
+      const dsel=rows.filter(r=>dist==='all'||r.ha===dn(dist));
+      const S=a=>a.reduce((s,r)=>s+r.n,0);const ill=a=>S(a.filter(r=>r.d>='R00'&&r.d<='R99'));
+      const d=S(dsel),il=ill(dsel),m=S(dsel.filter(r=>r.s==='m')),f=S(dsel.filter(r=>r.s==='f'));
+      const by={};dsel.forEach(r=>{by[r.d]=(by[r.d]||0)+r.n;});const top=Object.entries(by).sort((a,b)=>b[1]-a[1])[0];
+      setK('death_total',fmt(d));countTo('death_total',d,fmt);
+      setK('death_ill_defined_pct',d?fmtP(il/d*100):'—');countTo('death_ill_defined_pct',d?il/d*100:null,fmtP);
+      setK('death_top1',top?((ICD[top[0]]||top[0])+' ('+top[0]+')'):'—');
+      setK('death_sex_ratio',d?fmt(m)+' : '+fmt(f):'—');
+      DCODES.forEach(c=>{const r=rows.filter(x=>x.ha===dn(c));const t=S(r);setK('d'+c+'_death',fmt(t));setK('d'+c+'_rpct',t?fmtP(ill(r)/t*100):'—');});
+      const t=S(rows);setK('p_death',fmt(t));setK('p_rpct',t?fmtP(ill(rows)/t*100):'—');
+    }).catch(e=>fail('death',e));
+  }
+  document.addEventListener('nyk:filter',update);
+  $('apiBadge').addEventListener('click',()=>{
+    Object.keys(state.err).forEach(k=>{Object.keys(mem).forEach(m=>{if(m.startsWith(k==='dis'?'dis':k))delete mem[m];});});
+    state.err={};update();
+  });
+  update();
+
+  /* ---- สลับโหมดสว่าง/มืด: วงกลมขยายออกจากปุ่ม ---- */
+  const root=document.documentElement;
+  $('themeBtn').addEventListener('click',e=>{
+    const next=root.dataset.theme==='dark'?'light':'dark';
+    const apply=()=>{root.dataset.theme=next;store.set('nyk-theme',next);};
+    if(!document.startViewTransition||reduced()){apply();return;}
+    const r=e.currentTarget.getBoundingClientRect(), x=r.left+r.width/2, y=r.top+r.height/2;
+    const R=Math.hypot(Math.max(x,innerWidth-x),Math.max(y,innerHeight-y));
+    document.startViewTransition(apply).ready.then(()=>{
+      root.animate({clipPath:['circle(0px at '+x+'px '+y+'px)','circle('+R+'px at '+x+'px '+y+'px)']},
+        {duration:450,easing:'cubic-bezier(.2,.8,.2,1)',pseudoElement:'::view-transition-new(root)'});
+    });
+  });
+
+  /* ---- ย่อ/ขยายเมนู (เดสก์ท็อป) ---- */
+  const app=$('app'), tipn=$('tipn');
+  function setMini(on){app.classList.toggle('mini',on);$('miniBtn').setAttribute('aria-pressed',on);store.set('nyk-mini',on?'1':'0');}
+  if(store.get('nyk-mini')==='1')setMini(true); // ค่าอื่นทั้งหมดถูกละเว้น
+  $('miniBtn').addEventListener('click',()=>setMini(!app.classList.contains('mini')));
+  document.querySelectorAll('.nav a[data-tip]').forEach(a=>{
+    a.addEventListener('mouseenter',()=>{if(!app.classList.contains('mini')||innerWidth<=980)return;
+      const r=a.getBoundingClientRect();tipn.textContent=a.dataset.tip;tipn.style.left=(r.right+10)+'px';tipn.style.top=(r.top+r.height/2-16)+'px';tipn.style.display='block';});
+    a.addEventListener('mouseleave',()=>tipn.style.display='none');
+  });
+
+  /* ---- เมนูลิ้นชัก (มือถือ/แท็บเล็ต) ---- */
+  const side=$('side'),scrim=$('scrim'),mb=$('menuBtn');
+  function drawer(open){side.classList.toggle('open',open);scrim.classList.toggle('show',open);mb.setAttribute('aria-expanded',open);
+    if(open)$('closeBtn').focus();else mb.focus();}
+  mb.addEventListener('click',()=>drawer(true));
+  $('closeBtn').addEventListener('click',()=>drawer(false));
+  scrim.addEventListener('click',()=>drawer(false));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&side.classList.contains('open'))drawer(false);});
+
+  /* ---- แดชบอร์ดที่แสดงในหน้าจอหลัก ---- */
+  const ALLOWED_ORIGIN='https://apinyait.github.io';
+  const ROUTES={
+    population:{no:'01',t:'ประชากรตามชนิดการอยู่อาศัย',s:'แดชบอร์ดประชากร',g:'แดชบอร์ด',c:'ประชากร',u:'https://apinyait.github.io/-population-noph/'},
+    disease:{no:'02',t:'สาเหตุการป่วย 298 กลุ่มโรค',s:'แดชบอร์ดการป่วย',g:'แดชบอร์ด',c:'การป่วย',u:'https://apinyait.github.io/disease-noph/'},
+    death:{no:'03',t:'สาเหตุการตาย',s:'แดชบอร์ดการตาย',g:'แดชบอร์ด',c:'การตาย',u:'https://apinyait.github.io/death-noph/'}
+  };
+  const page=$('page'),fview=$('fview'),fbox=$('fbox'),fload=$('fload'),frames={};
+  let current=null;
+  function frameFor(key){
+    if(frames[key])return frames[key];
+    const f=document.createElement('iframe');
+    // อนุญาตเฉพาะแดชบอร์ดในโดเมนของเราเท่านั้น
+    if(!ROUTES[key].u.startsWith(ALLOWED_ORIGIN+'/'))throw new Error('blocked url');
+    f.title=ROUTES[key].s; f.loading='eager'; f.dataset.loaded='0';
+    f.setAttribute('sandbox','allow-scripts allow-same-origin allow-downloads allow-popups allow-popups-to-escape-sandbox');
+    f.setAttribute('referrerpolicy','strict-origin-when-cross-origin');
+    f.setAttribute('allow','');
+    f.addEventListener('load',()=>{f.dataset.loaded='1';if(current===key)fload.classList.add('hide');});
+    f.src=ROUTES[key].u; fbox.appendChild(f); frames[key]=f; return f;
+  }
+  function setActive(key){
+    document.querySelectorAll('.nav a[data-route]').forEach(a=>{
+      const on=a.dataset.route===key; a.classList.toggle('on',on);
+      if(on)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');
+    });
+  }
+  function show(key,anim){
+    if(!Object.prototype.hasOwnProperty.call(ROUTES,key))key='home';
+    if(key===current)return;
+    const swap=()=>{
+      current=key; setActive(key);
+      const sub=$('homeSub');
+      if(key==='home'){
+        fview.hidden=true; page.hidden=false;
+        sub.classList.remove('closed'); $('homeLink').setAttribute('aria-expanded','true');
+        $('crumbGrp').textContent='ภาพรวม'; $('crumbCur').textContent='หน้าหลัก';
+        document.title='NAKHON NAYOK HEALTH DATA · NYK Health Analytics';
+        if(anim){page.classList.remove('view-in');void page.offsetWidth;page.classList.add('view-in');}
+      }else{
+        const r=ROUTES[key];
+        page.hidden=true; fview.hidden=false;
+        sub.classList.add('closed'); $('homeLink').setAttribute('aria-expanded','false');
+        $('fNo').textContent=r.no; $('fTitle').textContent=r.t; $('fSub').textContent=r.s+' · '+r.u.replace('https://','');
+        $('fOpen').href=r.u; $('crumbGrp').textContent=r.g; $('crumbCur').textContent=r.c;
+        document.title=r.c+' · NAKHON NAYOK HEALTH DATA';
+        const f=frameFor(key);
+        Object.values(frames).forEach(x=>x.classList.toggle('show',x===f));
+        fload.classList.toggle('hide',f.dataset.loaded==='1');
+        if(anim){fview.classList.remove('view-in');void fview.offsetWidth;fview.classList.add('view-in');}
+      }
+      scrollTo({top:0});
+    };
+    if(anim&&document.startViewTransition&&!reduced())document.startViewTransition(swap);else swap();
+  }
+  $('fReload').addEventListener('click',()=>{const f=frames[current];if(!f)return;f.dataset.loaded='0';fload.classList.remove('hide');f.src=ROUTES[current].u;});
+  addEventListener('hashchange',()=>{show(location.hash.slice(1),true);if(innerWidth<=980&&side.classList.contains('open'))drawer(false);});
+  show(location.hash.slice(1)||'home',false);
+
+  /* หน้าหลัก: กดซ้ำเพื่อพับ/กางเมนูย่อย */
+  $('homeLink').addEventListener('click',e=>{
+    if(current!=='home')return; // ให้ hashchange พากลับหน้าหลัก
+    e.preventDefault();
+    const sub=$('homeSub'),open=sub.classList.toggle('closed')===false;
+    e.currentTarget.setAttribute('aria-expanded',open);
+  });
+  /* เมนูย่อยของหน้าหลัก: เลื่อนไปยังส่วนนั้น */
+  document.querySelectorAll('.sub a[data-spy]').forEach(a=>a.addEventListener('click',e=>{
+    e.preventDefault();
+    const go=()=>$(a.dataset.spy).scrollIntoView({behavior:reduced()?'auto':'smooth'});
+    if(current!=='home'){history.pushState(null,'','#home');show('home',true);setTimeout(go,60);}else go();
+    if(innerWidth<=980)drawer(false);
+  }));
+
+  /* ---- ไฮไลต์เมนูย่อยตามส่วนที่กำลังดู ---- */
+  const spyLinks=[...document.querySelectorAll('.sub a[data-spy]')];
+  const names={kpi:'ตัวเลขสำคัญ',subs:'แดชบอร์ดย่อย',dist:'เปรียบเทียบรายอำเภอ',notes:'หมายเหตุ'};
+  const io=new IntersectionObserver(es=>{
+    if(current!=='home')return;
+    es.forEach(en=>{if(!en.isIntersecting)return;const id=en.target.id;
+      spyLinks.forEach(x=>x.classList.toggle('cur',x.dataset.spy===id));$('crumbCur').textContent=names[id]||'หน้าหลัก';});
+  },{rootMargin:'-35% 0px -55% 0px'});
+  ['kpi','subs','dist','notes'].forEach(id=>io.observe($(id)));
+
+  /* ---- ค้นหาแดชบอร์ด ---- */
+  const q=$('q'),sres=$('sres');
+  const items=[...document.querySelectorAll('#dashNav a')].map(a=>({t:a.querySelector('.tx').textContent,k:a.dataset.kw,h:'#'+a.dataset.route,n:a.querySelector('.cnt').textContent}))
+    .concat([{t:'หน้าหลัก',k:'ภาพรวม home nakhon nayok health data',h:'#home',n:'ภาพรวม'}]);
+  let hi=0;
+  function find(){
+    const s=q.value.trim().toLowerCase();
+    if(!s){sres.classList.remove('show');return;}
+    const list=items.filter(it=>(it.t+' '+it.k).toLowerCase().includes(s));hi=0;
+    sres.replaceChildren(...(list.length?list.map((it,i)=>el('a',{href:it.h,className:i===0?'hi':''},[el('span',{textContent:it.t}),el('small',{textContent:it.n})])):[el('div',{className:'none',textContent:'ไม่พบแดชบอร์ดที่ค้นหา'})]));
+    sres.querySelectorAll('a').forEach(a=>a.setAttribute('role','option'));
+    sres.classList.add('show');
+  }
+  q.addEventListener('input',find);
+  q.addEventListener('keydown',e=>{
+    const as=[...sres.querySelectorAll('a')];
+    if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();if(!as.length)return;hi=(hi+(e.key==='ArrowDown'?1:-1)+as.length)%as.length;as.forEach((a,i)=>a.classList.toggle('hi',i===hi));}
+    else if(e.key==='Enter'&&as[hi]){e.preventDefault();as[hi].click();}
+    else if(e.key==='Escape'){q.value='';find();}
+  });
+  sres.addEventListener('click',e=>{if(e.target.closest('a')){q.value='';sres.classList.remove('show');q.blur();}});
+  q.addEventListener('blur',()=>setTimeout(()=>sres.classList.remove('show'),150));
+  document.addEventListener('keydown',e=>{if(e.key==='/'&&!['INPUT','SELECT','TEXTAREA'].includes(document.activeElement.tagName)){e.preventDefault();q.focus();}});
+})();
+</script>
+</body>
+</html>
