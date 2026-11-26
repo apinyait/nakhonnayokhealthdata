@@ -2,11 +2,16 @@
 <html lang="th" data-theme="light">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-V1Ro74QsI7bFODcR6ree7VbekOjp9rOKXAjvyHmV7a8=' 'sha256-8tncMqs7emBFmhIOF/lcSIwMgG+Q9q0dDj0QffbOneY='; style-src 'sha256-XnApTf8CIg0zmVn1R6h7UJUElt/uzgJn+osX00zsk7w='; img-src 'self' data:; font-src https://cdn.jsdelivr.net data:; connect-src 'self' https://opendata.moph.go.th; frame-src https://apinyait.github.io; base-uri 'none'; form-action 'none'; object-src 'none'; manifest-src 'self'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="NYK Health">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-V1Ro74QsI7bFODcR6ree7VbekOjp9rOKXAjvyHmV7a8=' 'sha256-pzuI53nv7YG6/gVZS+aK1hrGwrrk9HmjdoiG22nyEjc='; style-src 'sha256-8PxCXm+qK1RNC82r3WWWPkI/wxLxxOrwIFWASRlAbu4='; img-src 'self' data:; font-src https://cdn.jsdelivr.net data:; connect-src 'self' https://opendata.moph.go.th; frame-src https://apinyait.github.io; base-uri 'none'; form-action 'none'; object-src 'none'; manifest-src 'self'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>NAKHON NAYOK HEALTH DATA · NYK Health Analytics</title>
-<meta name="theme-color" content="#1d4ed8">
+<meta name="theme-color" content="#d4e9ff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d1c45" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="data:image/webp;base64,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">
 <script>
 // ตั้งธีมก่อนวาดหน้า ป้องกันหน้ากะพริบ
@@ -115,7 +120,7 @@ svg.i{width:22px;height:22px;flex:none;fill:none;stroke:currentColor;stroke-widt
 .crumb{display:flex;align-items:center;gap:6px;font-size:18px;color:var(--ink2);white-space:nowrap;min-width:0}
 .crumb svg{width:16px;height:16px}
 .crumb b{color:var(--head)}
-.search{flex:1;max-width:440px;margin-left:auto;position:relative}
+.search{flex:1;min-width:0;max-width:440px;margin-left:auto;position:relative}
 .search svg{position:absolute;left:12px;top:50%;translate:0 -50%;color:var(--ink2);width:18px;height:18px}
 .search input{width:100%;min-height:44px;font-size:19px;color:var(--ink);background:var(--field);border:1px solid var(--fieldb);border-radius:12px;padding:4px 44px 4px 38px;outline:none}
 .search input::placeholder{color:var(--ink2)}
@@ -131,7 +136,7 @@ svg.i{width:22px;height:22px;flex:none;fill:none;stroke:currentColor;stroke-widt
 .sres .none{padding:8px 12px;color:var(--ink2);font-size:18px}
 @keyframes pop{from{opacity:0;translate:0 -6px}to{opacity:1;translate:0 0}}
 .menubtn{display:none}
-.srcbadge{display:inline-flex;align-items:center;gap:8px;padding:4px 14px;min-height:36px;border-radius:999px;background:var(--navy);color:#fff;font-size:17px;font-weight:700;white-space:nowrap;
+.srcbadge{display:inline-flex;align-items:center;gap:8px;padding:4px 14px;min-height:44px;border-radius:999px;background:var(--navy);color:#fff;font-size:17px;font-weight:700;white-space:nowrap;
   box-shadow:0 0 0 1px rgba(147,197,253,.7),0 0 18px rgba(59,130,246,.6)}
 .srcbadge{border:0;cursor:pointer;font-family:var(--font)}
 .srcbadge.err{background:#991b1b}
@@ -214,7 +219,7 @@ select option{color:#0b2150;background:#fff}
 h2.t{font-size:26px;font-weight:700;margin:0 0 2px;color:var(--head);line-height:1.15}
 .sub-t{margin:0 0 10px;color:var(--ink2);font-size:18px}
 .tablewrap{overflow-x:auto;border-radius:12px;-webkit-overflow-scrolling:touch}
-table{border-collapse:separate;border-spacing:0;width:100%;min-width:640px;font-size:20px;font-variant-numeric:tabular-nums}
+table{border-collapse:separate;border-spacing:0;width:100%;min-width:520px;font-size:20px;font-variant-numeric:tabular-nums}
 th,td{padding:10px 14px;text-align:right;white-space:nowrap;border-bottom:1px solid var(--line)}
 th{background:#1e3a8a;color:#fff;font-weight:700}
 th:first-child{border-radius:12px 0 0 0}th:last-child{border-radius:0 12px 0 0}
@@ -258,7 +263,7 @@ footer .src{flex-basis:100%;font-size:16px;color:var(--head)}
 .scrim{display:none}
 @media (pointer:coarse){ .card:hover{border-color:var(--edge);box-shadow:var(--shadow)} .kpi:hover{transform:none} }
 @media (max-width:1320px){ .crumb{display:none} }
-@media (max-width:1180px){ #apiTxt{max-width:240px;overflow:hidden;text-overflow:ellipsis} }
+
 @media (max-width:980px){
   .app,.app.mini{grid-template-columns:minmax(0,1fr)}
   .side{position:fixed;left:0;top:0;bottom:0;width:min(300px,86vw);height:auto;transform:translateX(-105%);transition:transform .3s var(--ease);box-shadow:var(--shadow);background:var(--panel2)}
@@ -290,6 +295,68 @@ footer .src{flex-basis:100%;font-size:16px;color:var(--head)}
   .kpi .v{font-size:40px}.kpi .l{font-size:16px}.kpi .s{font-size:15.5px}
   .card{padding:14px}.dash h2,h2.t{font-size:23px}
   table{font-size:18px}th,td{padding:9px 10px}
+}
+
+/* ======================= มือถือและแท็บเล็ต ======================= */
+a,button,select,input,tr[tabindex]{touch-action:manipulation;-webkit-tap-highlight-color:rgba(59,130,246,.18)}
+.tabbar{display:none}
+.kpi .v{font-size:clamp(38px,3.9vw,50px)}
+#distBody tr{cursor:pointer}
+/* iPad แนวนอน / จอเล็ก: ย่อเมนูข้างเป็นไอคอนอัตโนมัติ */
+@media (min-width:981px) and (max-width:1199px){
+  .app,.app.mini{grid-template-columns:84px minmax(0,1fr)}
+  .app .sb-name,.app .grp,.app .nav a .tx,.app .nav a .end,.app .sub,.app .sb-foot .who,#miniBtn{display:none}
+  .app .sb-top{flex-direction:column}.app .nav a{justify-content:center;padding:6px}.app .sb-foot{justify-content:center}
+}
+/* iPad แนวตั้ง + มือถือ: แถบเมนูล่าง */
+@media (max-width:980px){
+  .top{padding-top:max(8px,env(safe-area-inset-top));padding-left:max(10px,env(safe-area-inset-left));padding-right:max(10px,env(safe-area-inset-right))}
+  .side{padding-top:max(14px,env(safe-area-inset-top));padding-bottom:max(14px,env(safe-area-inset-bottom))}
+  .main{padding-bottom:calc(66px + env(safe-area-inset-bottom))}
+  .tabbar{display:grid;grid-template-columns:repeat(4,1fr);position:fixed;left:0;right:0;bottom:0;z-index:60;
+    padding:6px max(8px,env(safe-area-inset-left)) calc(6px + env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-right));
+    background:var(--panel2);border-top:1px solid var(--edge);-webkit-backdrop-filter:blur(18px) saturate(150%);backdrop-filter:blur(18px) saturate(150%);box-shadow:0 -6px 24px rgba(30,64,175,.12)}
+  .tabbar a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:54px;border-radius:14px;color:var(--ink2);text-decoration:none;font-size:16px;font-weight:700;transition:color .2s,background .2s}
+  .tabbar a svg{width:24px;height:24px;transition:transform .25s var(--ease)}
+  .tabbar a.on{color:var(--accent-t);background:var(--chip)}
+  .tabbar a.on svg{transform:translateY(-2px);filter:drop-shadow(0 0 6px rgba(59,130,246,.6))}
+  .fview{height:calc(100dvh - 61px - 66px - env(safe-area-inset-bottom) - env(safe-area-inset-top))}
+  footer{padding-bottom:10px}
+}
+/* iPad แนวตั้ง: การ์ดแดชบอร์ดย่อยเต็มความกว้าง ตัวเลข 3 ช่องเรียงแนวนอน */
+@media (min-width:641px) and (max-width:980px){
+  .dash{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);column-gap:22px;align-items:start}
+  .dash .tag,.dash h2,.dash .desc{grid-column:1}
+  .dash dl{grid-column:2;grid-row:1/span 3;margin:0;display:grid;grid-template-columns:1fr;align-self:stretch}
+  .dash .btn{grid-column:1/-1;margin-top:12px}
+  .kpi .v{font-size:46px}
+}
+/* มือถือ */
+@media (max-width:640px){
+  .filters{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .filters select{font-size:18px;padding:2px 6px}
+  .filters .f.reset,.filters .status,.filters .warn{grid-column:1/-1}
+  .warn{font-size:16px}
+  .kpis{gap:10px}.kpi{padding:12px}
+  .kpi .v{font-size:clamp(28px,8.6vw,40px)}
+  .subs{gap:12px}
+  /* ตารางรายอำเภอ → การ์ด */
+  #dist .tablewrap{overflow:visible}
+  #dist table,#dist tbody,#dist tfoot,#dist tr,#dist td{display:block}
+  #dist table{min-width:0}
+  #dist thead{display:none}
+  #dist tbody tr,#dist tfoot tr{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr) minmax(0,.85fr);gap:2px 10px;padding:10px 12px;margin-bottom:8px;border:1px solid var(--line);border-radius:14px;background:var(--zebra)}
+  #dist tbody tr:nth-child(even){background:var(--zebra)}
+  #dist tbody tr.sel{background:var(--sel);border-color:var(--sky)}
+  #dist tfoot tr{background:var(--tfoot);margin-bottom:0}
+  #dist tfoot td{background:none}
+  #dist td{border:0;padding:0;text-align:left;white-space:normal;font-size:20px;font-weight:700;color:var(--ink)}
+  #dist td:first-child{grid-column:1/-1;font-size:21px;color:var(--head);padding-bottom:2px}
+  #dist td[data-label]::before{content:attr(data-label);display:block;font-size:15.5px;font-weight:400;color:var(--ink2);line-height:1.2}
+}
+@media (max-width:380px){
+  .search{min-width:0}.top{gap:6px}
+  .kpi .l{font-size:15.5px}
 }
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;translate:none}}
 </style>
@@ -433,17 +500,17 @@ footer .src{flex-basis:100%;font-size:16px;color:var(--head)}
 
     <section class="card reveal dl52" id="dist"  aria-labelledby="tDist">
       <h2 class="t" id="tDist">เปรียบเทียบรายอำเภอ</h2>
-      <p class="sub-t" id="sDist">ปีงบประมาณล่าสุด · เลื่อนตารางไปทางซ้าย–ขวาได้บนมือถือ</p>
+      <p class="sub-t" id="sDist">แตะอำเภอเพื่อดูเฉพาะอำเภอนั้น</p>
       <div class="tablewrap" tabindex="0" aria-label="ตารางเปรียบเทียบรายอำเภอ">
         <table>
-          <thead><tr><th scope="col">อำเภอ</th><th scope="col">ประชากร</th><th scope="col">การมารับบริการ</th><th scope="col">การตาย</th><th scope="col">สาเหตุไม่ชัดเจน (%)</th></tr></thead>
+          <thead><tr><th scope="col">อำเภอ</th><th scope="col">ประชากร</th><th scope="col">การมารับบริการ</th><th scope="col">การตาย</th></tr></thead>
           <tbody id="distBody">
-            <tr data-d="2601"><td>เมืองนครนายก</td><td data-k="d2601_pop">—</td><td data-k="d2601_visit">—</td><td data-k="d2601_death">—</td><td data-k="d2601_rpct">—</td></tr>
-            <tr data-d="2602"><td>ปากพลี</td><td data-k="d2602_pop">—</td><td data-k="d2602_visit">—</td><td data-k="d2602_death">—</td><td data-k="d2602_rpct">—</td></tr>
-            <tr data-d="2603"><td>บ้านนา</td><td data-k="d2603_pop">—</td><td data-k="d2603_visit">—</td><td data-k="d2603_death">—</td><td data-k="d2603_rpct">—</td></tr>
-            <tr data-d="2604"><td>องครักษ์</td><td data-k="d2604_pop">—</td><td data-k="d2604_visit">—</td><td data-k="d2604_death">—</td><td data-k="d2604_rpct">—</td></tr>
+            <tr data-d="2601" tabindex="0" aria-label="กรองเฉพาะอำเภอนี้"><td>เมืองนครนายก</td><td data-label="ประชากร" data-k="d2601_pop">—</td><td data-label="รับบริการ" data-k="d2601_visit">—</td><td data-label="การตาย" data-k="d2601_death">—</td></tr>
+            <tr data-d="2602" tabindex="0" aria-label="กรองเฉพาะอำเภอนี้"><td>ปากพลี</td><td data-label="ประชากร" data-k="d2602_pop">—</td><td data-label="รับบริการ" data-k="d2602_visit">—</td><td data-label="การตาย" data-k="d2602_death">—</td></tr>
+            <tr data-d="2603" tabindex="0" aria-label="กรองเฉพาะอำเภอนี้"><td>บ้านนา</td><td data-label="ประชากร" data-k="d2603_pop">—</td><td data-label="รับบริการ" data-k="d2603_visit">—</td><td data-label="การตาย" data-k="d2603_death">—</td></tr>
+            <tr data-d="2604" tabindex="0" aria-label="กรองเฉพาะอำเภอนี้"><td>องครักษ์</td><td data-label="ประชากร" data-k="d2604_pop">—</td><td data-label="รับบริการ" data-k="d2604_visit">—</td><td data-label="การตาย" data-k="d2604_death">—</td></tr>
           </tbody>
-          <tfoot><tr><td>รวมทั้งจังหวัด</td><td data-k="p_pop">—</td><td data-k="p_visit">—</td><td data-k="p_death">—</td><td data-k="p_rpct">—</td></tr></tfoot>
+          <tfoot><tr><td>รวมทั้งจังหวัด</td><td data-label="ประชากร" data-k="p_pop">—</td><td data-label="รับบริการ" data-k="p_visit">—</td><td data-label="การตาย" data-k="p_death">—</td></tr></tfoot>
         </table>
       </div>
     </section>
@@ -477,6 +544,12 @@ footer .src{flex-basis:100%;font-size:16px;color:var(--head)}
   </div>
 </div>
 </div>
+<nav class="tabbar" id="tabbar" aria-label="เมนูหลัก">
+  <a href="#home" data-route="home"><svg class="i"><use href="#i-home"/></svg><span>หน้าหลัก</span></a>
+  <a href="#population" data-route="population"><svg class="i"><use href="#i-users"/></svg><span>ประชากร</span></a>
+  <a href="#disease" data-route="disease"><svg class="i"><use href="#i-activity"/></svg><span>การป่วย</span></a>
+  <a href="#death" data-route="death"><svg class="i"><use href="#i-clip"/></svg><span>การตาย</span></a>
+</nav>
 <div class="tipn" id="tipn"></div>
 
 <script>
@@ -486,6 +559,8 @@ footer .src{flex-basis:100%;font-size:16px;color:var(--head)}
   const reduced=()=>matchMedia('(prefers-reduced-motion: reduce)').matches;
   const store={get:k=>{try{return localStorage.getItem(k)}catch(e){return null}},set:(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}}};
 
+  /* ---- ข้อความค้นหาแบบสั้นบนมือถือ ---- */
+  if(matchMedia('(max-width:640px)').matches)$('q').placeholder='ค้นหา…';
   /* ---- ตัวกรอง ---- */
   const selYear=$('selYear'), selDist=$('selDist');
   /* ปีงบประมาณ: คำนวณจากวันที่ปัจจุบัน (ต.ค. ขึ้นปีงบใหม่) แสดง 3 ปีย้อนหลัง
@@ -494,7 +569,7 @@ footer .src{flex-basis:100%;font-size:16px;color:var(--head)}
   const FY=now.getFullYear()+543+(now.getMonth()>=9?1:0);
   const YEARS=[FY,FY-1,FY-2];
   const el=(tag,props,kids)=>{const n=document.createElement(tag);if(props)Object.assign(n,props);(kids||[]).forEach(k=>n.append(k));return n;};
-  selYear.replaceChildren(...YEARS.map((y,i)=>el('option',{value:String(y),textContent:y+(i===0?' (ปีปัจจุบัน)':'')})));
+  selYear.replaceChildren(...YEARS.map((y,i)=>el('option',{value:String(y),textContent:y+(i===0?' (ปัจจุบัน)':'')})));
   selYear.value=String(FY);
   window.NYK={fiscalYear:FY,years:YEARS,selected:()=>({year:+selYear.value,years:[+selYear.value,+selYear.value-1,+selYear.value-2],district:selDist.value})};
   function render(){
@@ -503,7 +578,7 @@ footer .src{flex-basis:100%;font-size:16px;color:var(--head)}
     const d=selDist.value, dTxt=selDist.options[selDist.selectedIndex].text;
     $('status').replaceChildren('แสดง: ',el('b',{textContent:yTxt}),' · ',el('b',{textContent:d==='all'?'ทุกอำเภอ':'อ.'+dTxt}));
     $('fyWarn').hidden=yv!==FY;
-    $('sDist').textContent=yTxt+' · เลื่อนตารางไปทางซ้าย–ขวาได้บนมือถือ';
+    $('sDist').textContent=yTxt+' · แตะอำเภอเพื่อดูเฉพาะอำเภอนั้น แตะซ้ำเพื่อดูทุกอำเภอ';
     // เมื่อเชื่อม API: ฟังเหตุการณ์ nyk:filter แล้วดึงข้อมูลปี detail.years (3 ปีย้อนหลังจากปีที่เลือก)
     document.dispatchEvent(new CustomEvent('nyk:filter',{detail:NYK.selected()}));
     document.querySelectorAll('#distBody tr').forEach(tr=>{
@@ -512,6 +587,8 @@ footer .src{flex-basis:100%;font-size:16px;color:var(--head)}
     });
   }
   selYear.addEventListener('change',render); selDist.addEventListener('change',render);
+  document.querySelectorAll('#distBody tr').forEach(tr=>{const pick=()=>{selDist.value=selDist.value===tr.dataset.d?'all':tr.dataset.d;render();};
+    tr.addEventListener('click',pick);tr.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();pick();}});});
   $('btnReset').addEventListener('click',()=>{selYear.value=String(FY);selDist.value='all';render();});
   render();
 
@@ -591,7 +668,7 @@ footer .src{flex-basis:100%;font-size:16px;color:var(--head)}
     const t0=performance.now(),d=900;const step=now=>{const p=Math.min(1,(now-t0)/d),q=1-Math.pow(1-p,3);e.textContent=f(val*q);if(p<1)requestAnimationFrame(step);};requestAnimationFrame(step);});}
   const KEYS={pop:['pop_area','pop_registered_absent','pop_duplicate','d2601_pop','d2602_pop','d2603_pop','d2604_pop','p_pop'],
     dis:['visit_total','disease_top1','d2601_visit','d2602_visit','d2603_visit','d2604_visit','p_visit'],age:['visit_age_le15'],
-    death:['death_total','death_ill_defined_pct','death_top1','death_sex_ratio','d2601_death','d2602_death','d2603_death','d2604_death','p_death','d2601_rpct','d2602_rpct','d2603_rpct','d2604_rpct','p_rpct']};
+    death:['death_total','death_ill_defined_pct','death_top1','death_sex_ratio','d2601_death','d2602_death','d2603_death','d2604_death','p_death']};
   const DCODES=['2601','2602','2603','2604'];
   const dn=c=>D2[c.slice(2,4)];
   const state={ok:{},err:{},at:null};
@@ -657,8 +734,8 @@ footer .src{flex-basis:100%;font-size:16px;color:var(--head)}
       setK('death_ill_defined_pct',d?fmtP(il/d*100):'—');countTo('death_ill_defined_pct',d?il/d*100:null,fmtP);
       setK('death_top1',top?((ICD[top[0]]||top[0])+' ('+top[0]+')'):'—');
       setK('death_sex_ratio',d?fmt(m)+' : '+fmt(f):'—');
-      DCODES.forEach(c=>{const r=rows.filter(x=>x.ha===dn(c));const t=S(r);setK('d'+c+'_death',fmt(t));setK('d'+c+'_rpct',t?fmtP(ill(r)/t*100):'—');});
-      const t=S(rows);setK('p_death',fmt(t));setK('p_rpct',t?fmtP(ill(rows)/t*100):'—');
+      DCODES.forEach(c=>{const r=rows.filter(x=>x.ha===dn(c));const t=S(r);setK('d'+c+'_death',fmt(t));});
+      setK('p_death',fmt(S(rows)));
     }).catch(e=>fail('death',e));
   }
   document.addEventListener('nyk:filter',update);
@@ -724,7 +801,7 @@ footer .src{flex-basis:100%;font-size:16px;color:var(--head)}
     f.src=ROUTES[key].u; fbox.appendChild(f); frames[key]=f; return f;
   }
   function setActive(key){
-    document.querySelectorAll('.nav a[data-route]').forEach(a=>{
+    document.querySelectorAll('.nav a[data-route],.tabbar a[data-route]').forEach(a=>{
       const on=a.dataset.route===key; a.classList.toggle('on',on);
       if(on)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');
     });
@@ -761,6 +838,9 @@ footer .src{flex-basis:100%;font-size:16px;color:var(--head)}
   addEventListener('hashchange',()=>{show(location.hash.slice(1),true);if(innerWidth<=980&&side.classList.contains('open'))drawer(false);});
   show(location.hash.slice(1)||'home',false);
 
+  /* แถบเมนูล่าง: แตะหน้าเดิมซ้ำ = เลื่อนกลับขึ้นบนสุด */
+  document.querySelectorAll('.tabbar a').forEach(a=>a.addEventListener('click',e=>{
+    if(a.dataset.route===current){e.preventDefault();scrollTo({top:0,behavior:reduced()?'auto':'smooth'});}}));
   /* หน้าหลัก: กดซ้ำเพื่อพับ/กางเมนูย่อย */
   $('homeLink').addEventListener('click',e=>{
     if(current!=='home')return; // ให้ hashchange พากลับหน้าหลัก
